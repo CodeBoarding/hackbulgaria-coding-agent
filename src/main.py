@@ -48,6 +48,14 @@ You have access to these tools:
 - read_file: Read contents of a file with line numbers
 - write_file: Create or modify files at specific line ranges
 - lint_file: Validate Python files (AST syntax check + pylint analysis)
+- run_bash_command: Execute bash commands to explore the codebase (ls, grep, find, git, etc.)
+
+Use run_bash_command to:
+- Explore directory structure (ls, tree, find)
+- Search for patterns in files (grep, ag)
+- Check git status and history (git status, git log)
+- Count lines of code (wc -l)
+- Find files by name or extension (find . -name "*.py")
 
 Always strive for clean, well-structured, and properly linted code."""
 

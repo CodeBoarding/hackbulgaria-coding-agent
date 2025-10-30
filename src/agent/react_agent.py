@@ -5,6 +5,7 @@ from langgraph.prebuilt import create_react_agent
 from langgraph.checkpoint.memory import MemorySaver
 from src.tools.file_tools import read_file, write_file, set_home_directory
 from src.tools.lint_tools import lint_file
+from src.tools.bash_tools import run_bash_command
 from src.config import get_google_api_key, MODEL_NAME, TEMPERATURE
 from typing import Optional
 
@@ -31,7 +32,7 @@ def create_coding_agent(home_directory: Optional[str] = None):
     )
     
     # Define tools
-    tools = [read_file, write_file, lint_file]
+    tools = [read_file, write_file, lint_file, run_bash_command]
     
     # Create memory for conversation history
     memory = MemorySaver()

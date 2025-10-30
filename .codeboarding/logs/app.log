@@ -676,3 +676,191 @@ Component Configuration Service has hb_coding_agent/config/settings.py as an inc
 2025-10-30 12:15:02 INFO     [agents.abstraction_agent:120] [AbstractionAgent] Classifying files for project: hb-coding-agent
 2025-10-30 12:15:11 WARNING  [langchain_google_genai._function_utils:102] Key '$defs' is not supported in schema, ignoring
 2025-10-30 12:15:18 INFO     [diagram_analysis.diagram_generator:176] Analysis complete. Generated 1 analysis files
+2025-10-30 14:22:00 WARNING  [utils:47] STATIC_ANALYSIS_CONFIG environment variable is not set, using default VSCode Setup.
+2025-10-30 14:22:00 WARNING  [utils:47] STATIC_ANALYSIS_CONFIG environment variable is not set, using default VSCode Setup.
+2025-10-30 14:22:00 INFO     [static_analyzer.scanner:60] Found: ProgrammingLanguage(language=Python, size=434, percentage=100.0, suffixes=['.pyi', '.py'])
+2025-10-30 14:22:00 INFO     [static_analyzer.scanner:63] Added ProgrammingLanguage(language=Python, size=434, percentage=100.0, suffixes=['.pyi', '.py'])
+2025-10-30 14:22:00 INFO     [static_analyzer:54] Starting static analysis for Python in /Users/imilev/StartUp/hb-coding-agent
+2025-10-30 14:22:00 INFO     [static_analyzer.lsp_client.client:69] Starting server /Users/imilev/.vscode/extensions/codeboarding.codeboarding-0.2.10/bin/macos/py-lsp --stdio...
+2025-10-30 14:22:00 INFO     [static_analyzer.lsp_client.client:155] Initializing connection for python...
+2025-10-30 14:22:00 INFO     [static_analyzer.lsp_client.client:179] Initialization successful.
+2025-10-30 14:22:00 INFO     [static_analyzer.lsp_client.client:339] Starting unified static analysis with multithreading...
+2025-10-30 14:22:00 INFO     [static_analyzer.lsp_client.client:362] Found 9 source files. Starting unified analysis...
+2025-10-30 14:22:00 INFO     [static_analyzer.lsp_client.client:369] Found 0 classes in workspace
+2025-10-30 14:22:00 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/config.py with ID 3
+2025-10-30 14:22:00 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/__init__.py with ID 4
+2025-10-30 14:22:00 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/main.py with ID 5
+2025-10-30 14:22:00 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/tools/lint_tools.py with ID 6
+2025-10-30 14:22:00 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/tools/file_tools.py with ID 7
+2025-10-30 14:22:00 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/tools/__init__.py with ID 8
+2025-10-30 14:22:00 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/tools/bash_tools.py with ID 9
+2025-10-30 14:22:00 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/agent/__init__.py with ID 10
+2025-10-30 14:22:00 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/agent/react_agent.py with ID 11
+2025-10-30 14:22:02 INFO     [static_analyzer.lsp_client.client:396] Successfully processed 9 files
+2025-10-30 14:22:02 INFO     [static_analyzer.lsp_client.client:445] Unified static analysis complete.
+2025-10-30 14:22:02 INFO     [static_analyzer.lsp_client.client:446] Results: 95 references, 0 classes, 4 packages, 88 call graph nodes, 7 edges
+2025-10-30 14:22:02 INFO     [agents.meta_agent:31] [MetaAgent] Analyzing metadata for project: hb-coding-agent
+2025-10-30 14:22:03 INFO     [agents.tools.read_docs:82] [ReadDocs Tool] Reading file /Users/imilev/StartUp/hb-coding-agent/README.md around line 0
+2025-10-30 14:22:17 INFO     [agents.meta_agent:36] [MetaAgent] Completed metadata analysis for project: # 🎯 Project Metadata Analysis
+
+**Project Type:** AI Agent / CLI Tool
+**Domain:** AI/ML, Software Development, Developer Tools
+**Technology Stack:** Python 3.12, LangChain, Google Gemini (LLM), uv (dependency management), pylint (code validation), python-dotenv
+**Architectural Patterns:** ReACT (Reasoning and Acting) Agent, Agent-based Architecture, Command-line Interface (CLI)
+**Expected Components:** Agent Core (Orchestrator), LLM Interface, Tool/Action Executor (e.g., File I/O Tool, Code Validation Tool), Memory Management, CLI Interface, File System Adapter, Code Quality Tooling Integration
+**Architectural Bias:** Agent-centric, modular design. Emphasize the Agent as the central orchestrator, with clear separation between the LLM, the Agent's reasoning/planning, and the tools it uses. Highlight input/output mechanisms (CLI) and external integrations (File System, Pylint), and the flow of information and control within the ReACT loop.
+
+2025-10-30 14:22:17 WARNING  [agents.diff_analyzer:50] [DiffAnalyzingAgent] No version file found, cannot get diff data
+2025-10-30 14:22:20 INFO     [diagram_analysis.diagram_generator:111] Generating initial analysis
+2025-10-30 14:22:20 INFO     [agents.diff_analyzer:87] [DiffAnalyzingAgent] No existing analysis found, running full analysis
+2025-10-30 14:22:20 INFO     [agents.abstraction_agent:43] [AbstractionAgent] Analyzing CFG for project: hb-coding-agent
+2025-10-30 14:22:40 WARNING  [langchain_google_genai._function_utils:102] Key '$defs' is not supported in schema, ignoring
+2025-10-30 14:22:59 INFO     [agents.abstraction_agent:68] [AbstractionAgent] Analyzing Source for project: hb-coding-agent
+2025-10-30 14:23:09 INFO     [agents.tools.read_file_structure:77] [File Structure Tool] Found directory /Users/imilev/StartUp/hb-coding-agent/src
+2025-10-30 14:23:09 INFO     [agents.tools.read_file_structure:86] [File Structure Tool] Found directory /Users/imilev/StartUp/hb-coding-agent/src
+2025-10-30 14:23:09 INFO     [agents.tools.read_file_structure:95] [File Structure Tool] Reading file structure for /Users/imilev/StartUp/hb-coding-agent/src
+2025-10-30 14:23:16 INFO     [agents.tools.read_file:49] [ReadFile Tool] Reading file src/agent/react_agent.py around line 1
+2025-10-30 14:23:16 INFO     [agents.tools.read_file:100] [ReadFile Tool] Successfully read 43 lines from src/agent/react_agent.py 
+2025-10-30 14:23:40 WARNING  [langchain_google_genai._function_utils:102] Key '$defs' is not supported in schema, ignoring
+2025-10-30 14:24:10 INFO     [agents.abstraction_agent:90] [AbstractionAgent] Generating final analysis for project: hb-coding-agent
+2025-10-30 14:24:40 WARNING  [langchain_google_genai._function_utils:102] Key '$defs' is not supported in schema, ignoring
+2025-10-30 14:25:03 INFO     [static_analyzer.reference_resolve_mixin:26] Fixing source code reference lines for the analysis: # 📦 Abstract Components Overview
+**Component:** `CLI Interface`
+   - *Description*: Manages all command-line user interactions, including argument parsing, displaying agent output, and handling user prompts. It serves as the primary input/output gateway for the system.
+   - *Related Classes/Methods*: `QName:`main` FileRef: `src/main.py``
+**Component:** `Agent Core (ReACT Orchestrator)`
+   - *Description*: The central intelligence, implementing the ReACT loop for reasoning, planning, and action orchestration. It drives decision-making by interacting with the LLM and dispatching tool actions.
+   - *Related Classes/Methods*: `QName:`create_coding_agent` FileRef: `src/agent/react_agent.py``, `QName:`run_agent_loop` FileRef: `src/agent/react_agent.py``
+**Component:** `LLM Interface (Google Gemini)`
+   - *Description*: Provides a standardized interface for communicating with the Google Gemini Large Language Model, handling prompt formatting, request submission, and response parsing.
+   - *Related Classes/Methods*: `QName:`invoke_llm` FileRef: `src/agent/react_agent.py``
+**Component:** `Tooling Layer (via Tool Executor)`
+   - *Description*: A unified layer for executing various agent tools. The `Tool Executor` dispatches requests to specialized tools such as the `File System Tool` (for file I/O), `Code Quality Tool (Pylint)` (for static analysis), and `Bash Command Tool` (for shell commands).
+   - *Related Classes/Methods*: `QName:`execute_tool` FileRef: `src/agent/react_agent.py``
+**Component:** `Memory Management`
+   - *Description*: Stores and retrieves conversational history, agent state, and observations to maintain context and inform future decisions within the ReACT loop.
+   - *Related Classes/Methods*: `QName:`store_context` FileRef: `src/agent/react_agent.py``, `QName:`retrieve_context` FileRef: `src/agent/react_agent.py``
+**Component:** `Configuration Manager`
+   - *Description*: Manages application-wide settings, environment variables, and API keys, ensuring components have access to necessary configuration parameters.
+   - *Related Classes/Methods*: `QName:`get_google_api_key` FileRef: `src/config.py``(CLI Interface, Initiates Agent Session with User Commands, Agent Core (ReACT Orchestrator))
+(Agent Core (ReACT Orchestrator), Stores Agent State & Context, Memory Management)
+(Memory Management, Provides Historical Context, Agent Core (ReACT Orchestrator))
+(Agent Core (ReACT Orchestrator), Submits Reasoning Prompts, LLM Interface (Google Gemini))
+(LLM Interface (Google Gemini), Delivers LLM Decisions & Actions, Agent Core (ReACT Orchestrator))
+(Agent Core (ReACT Orchestrator), Dispatches Tool Actions, Tooling Layer (via Tool Executor))
+(Tooling Layer (via Tool Executor), Reports Tool Execution Outcomes, Agent Core (ReACT Orchestrator))
+(Agent Core (ReACT Orchestrator), Presents Final Output & Status, CLI Interface)
+(Configuration Manager, Supplies LLM Configuration, LLM Interface (Google Gemini))
+(Configuration Manager, Provides Agent Configuration, Agent Core (ReACT Orchestrator))
+2025-10-30 14:25:03 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for main in Python: Source code reference for 'main' in language 'Python' not found in results.
+2025-10-30 14:25:03 INFO     [static_analyzer.reference_resolve_mixin:81] [Reference Resolution] Loosely matched main in Python at /Users/imilev/StartUp/hb-coding-agent/src/main.py
+2025-10-30 14:25:03 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for create_coding_agent in Python: Source code reference for 'create_coding_agent' in language 'Python' not found in results.
+2025-10-30 14:25:03 INFO     [static_analyzer.reference_resolve_mixin:81] [Reference Resolution] Loosely matched create_coding_agent in Python at /Users/imilev/StartUp/hb-coding-agent/src/agent/react_agent.py
+2025-10-30 14:25:03 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for run_agent_loop in Python: Source code reference for 'run_agent_loop' in language 'Python' not found in results.
+2025-10-30 14:25:03 INFO     [static_analyzer.reference_resolve_mixin:103] [Reference Resolution] File path matched for run_agent_loop in Python at /Users/imilev/StartUp/hb-coding-agent/src/agent/react_agent.py
+2025-10-30 14:25:03 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for invoke_llm in Python: Source code reference for 'invoke_llm' in language 'Python' not found in results.
+2025-10-30 14:25:03 INFO     [static_analyzer.reference_resolve_mixin:103] [Reference Resolution] File path matched for invoke_llm in Python at /Users/imilev/StartUp/hb-coding-agent/src/agent/react_agent.py
+2025-10-30 14:25:03 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for execute_tool in Python: Source code reference for 'execute_tool' in language 'Python' not found in results.
+2025-10-30 14:25:03 INFO     [static_analyzer.reference_resolve_mixin:103] [Reference Resolution] File path matched for execute_tool in Python at /Users/imilev/StartUp/hb-coding-agent/src/agent/react_agent.py
+2025-10-30 14:25:03 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for store_context in Python: Source code reference for 'store_context' in language 'Python' not found in results.
+2025-10-30 14:25:03 INFO     [static_analyzer.reference_resolve_mixin:103] [Reference Resolution] File path matched for store_context in Python at /Users/imilev/StartUp/hb-coding-agent/src/agent/react_agent.py
+2025-10-30 14:25:03 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for retrieve_context in Python: Source code reference for 'retrieve_context' in language 'Python' not found in results.
+2025-10-30 14:25:03 INFO     [static_analyzer.reference_resolve_mixin:103] [Reference Resolution] File path matched for retrieve_context in Python at /Users/imilev/StartUp/hb-coding-agent/src/agent/react_agent.py
+2025-10-30 14:25:03 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for get_google_api_key in Python: Source code reference for 'get_google_api_key' in language 'Python' not found in results.
+2025-10-30 14:25:03 INFO     [static_analyzer.reference_resolve_mixin:81] [Reference Resolution] Loosely matched get_google_api_key in Python at /Users/imilev/StartUp/hb-coding-agent/src/config.py
+2025-10-30 14:25:03 INFO     [agents.validator_agent:121] [ValidatorAgent] Running validation on the analysis.
+2025-10-30 14:25:51 INFO     [agents.validator_agent:140] [ValidatorAgent] Validation result: [Valid: False] with insights: **Feedback Information:**
+The analysis violates the validation criterion "Verify max 1 relationship per component pair". Several component pairs have two distinct relationships defined between them, which contradicts this rule.
+
+Specifically, the following pairs have more than one relationship:
+
+1.  **CLI Interface & Agent Core (ReACT Orchestrator)**:
+    *   (CLI Interface, Initiates Agent Session with User Commands, Agent Core (ReACT Orchestrator))
+    *   (Agent Core (ReACT Orchestrator), Presents Final Output & Status, CLI Interface)
+2.  **Agent Core (ReACT Orchestrator) & Memory Management**:
+    *   (Agent Core (ReACT Orchestrator), Stores Agent State & Context, Memory Management)
+    *   (Memory Management, Provides Historical Context, Agent Core (ReACT Orchestrator))
+3.  **Agent Core (ReACT Orchestrator) & LLM Interface (Google Gemini)**:
+    *   (Agent Core (ReACT Orchestrator), Submits Reasoning Prompts, LLM Interface (Google Gemini))
+    *   (LLM Interface (Google Gemini), Delivers LLM Decisions & Actions, Agent Core (ReACT Orchestrator))
+4.  **Agent Core (ReACT Orchestrator) & Tooling Layer (via Tool Executor)**:
+    *   (Agent Core (ReACT Orchestrator), Dispatches Tool Actions, Tooling Layer (via Tool Executor))
+    *   (Tooling Layer (via Tool Executor), Reports Tool Execution Outcomes, Agent Core (ReACT Orchestrator))
+
+While these relationships describe distinct interactions and are logically consistent with the component responsibilities, they explicitly violate the "max 1 relationship per component pair" rule. To be valid under this rule, these bidirectional interactions would need to be consolidated into a single, more generalized relationship for each pair.
+
+**Feedback Information:**
+Component CLI Interface has main as an incorrect reference: 'QName:`main` FileRef: `src/main.py`, Lines:(96:191)'. main is INCORRECT reference, there is no such module or function/class/method in the project. Please reconsider by using `getSourceCode` tool to find the correct reference or validate with `readFile` tool if it is a file reference.
+Component Agent Core (ReACT Orchestrator) has create_coding_agent as an incorrect reference: 'QName:`create_coding_agent` FileRef: `src/agent/react_agent.py`, Lines:(13:43)'. create_coding_agent is INCORRECT reference, there is no such module or function/class/method in the project. Please reconsider by using `getSourceCode` tool to find the correct reference or validate with `readFile` tool if it is a file reference.
+Component Agent Core (ReACT Orchestrator) has run_agent_loop as an incorrect reference: 'QName:`run_agent_loop` FileRef: `src/agent/react_agent.py`'. run_agent_loop is INCORRECT reference, there is no such module or function/class/method in the project. Please reconsider by using `getSourceCode` tool to find the correct reference or validate with `readFile` tool if it is a file reference.
+Component LLM Interface (Google Gemini) has invoke_llm as an incorrect reference: 'QName:`invoke_llm` FileRef: `src/agent/react_agent.py`'. invoke_llm is INCORRECT reference, there is no such module or function/class/method in the project. Please reconsider by using `getSourceCode` tool to find the correct reference or validate with `readFile` tool if it is a file reference.
+Component Tooling Layer (via Tool Executor) has execute_tool as an incorrect reference: 'QName:`execute_tool` FileRef: `src/agent/react_agent.py`'. execute_tool is INCORRECT reference, there is no such module or function/class/method in the project. Please reconsider by using `getSourceCode` tool to find the correct reference or validate with `readFile` tool if it is a file reference.
+Component Memory Management has store_context as an incorrect reference: 'QName:`store_context` FileRef: `src/agent/react_agent.py`'. store_context is INCORRECT reference, there is no such module or function/class/method in the project. Please reconsider by using `getSourceCode` tool to find the correct reference or validate with `readFile` tool if it is a file reference.
+Component Memory Management has retrieve_context as an incorrect reference: 'QName:`retrieve_context` FileRef: `src/agent/react_agent.py`'. retrieve_context is INCORRECT reference, there is no such module or function/class/method in the project. Please reconsider by using `getSourceCode` tool to find the correct reference or validate with `readFile` tool if it is a file reference.
+Component Configuration Manager has get_google_api_key as an incorrect reference: 'QName:`get_google_api_key` FileRef: `src/config.py`, Lines:(13:18)'. get_google_api_key is INCORRECT reference, there is no such module or function/class/method in the project. Please reconsider by using `getSourceCode` tool to find the correct reference or validate with `readFile` tool if it is a file reference.
+
+
+2025-10-30 14:25:51 INFO     [agents.abstraction_agent:108] [AbstractionAgent] Applying feedback to analysis for project: hb-coding-agent
+2025-10-30 14:25:56 INFO     [agents.tools.read_file:49] [ReadFile Tool] Reading file src/main.py around line 96
+2025-10-30 14:25:56 INFO     [agents.tools.read_file:100] [ReadFile Tool] Successfully read 195 lines from src/main.py 
+2025-10-30 14:26:00 INFO     [agents.tools.read_source:46] [Source Reference Tool] Reading source code for src.agent.react_agent.create_coding_agent
+2025-10-30 14:26:00 INFO     [agents.tools.read_source:46] [Source Reference Tool] Reading source code for src.agent.react_agent.run_agent_loop
+2025-10-30 14:26:00 WARNING  [agents.tools.read_source:59] [Source Reference Tool] No reference found for src.agent.react_agent.run_agent_loop in Python.
+2025-10-30 14:26:00 INFO     [agents.tools.read_source:96] [Source Reference Tool] Success, reading from: /Users/imilev/StartUp/hb-coding-agent/src/agent/react_agent.py.
+2025-10-30 14:26:00 WARNING  [agents.tools.read_source:63] [Source Reference Tool] No loose reference found for src.agent.react_agent.run_agent_loop in Python.
+2025-10-30 14:26:00 WARNING  [agents.tools.read_source:74] [Source Reference Tool] No source code reference found for src.agent.react_agent.run_agent_loop in any language. Suggesting to use our file read tooling.
+2025-10-30 14:26:09 INFO     [agents.tools.read_file:49] [ReadFile Tool] Reading file src/config.py around line 13
+2025-10-30 14:26:09 INFO     [agents.tools.read_file:100] [ReadFile Tool] Successfully read 23 lines from src/config.py 
+2025-10-30 14:26:17 INFO     [agents.tools.read_file:49] [ReadFile Tool] Reading file src/agent/react_agent.py around line 1
+2025-10-30 14:26:17 INFO     [agents.tools.read_file_structure:77] [File Structure Tool] Found directory /Users/imilev/StartUp/hb-coding-agent/src/agent
+2025-10-30 14:26:17 INFO     [agents.tools.read_file_structure:86] [File Structure Tool] Found directory /Users/imilev/StartUp/hb-coding-agent/src/agent
+2025-10-30 14:26:17 INFO     [agents.tools.read_file:100] [ReadFile Tool] Successfully read 43 lines from src/agent/react_agent.py 
+2025-10-30 14:26:17 INFO     [agents.tools.read_file_structure:95] [File Structure Tool] Reading file structure for /Users/imilev/StartUp/hb-coding-agent/src/agent
+2025-10-30 14:26:38 WARNING  [langchain_google_genai._function_utils:102] Key '$defs' is not supported in schema, ignoring
+2025-10-30 14:27:01 INFO     [static_analyzer.reference_resolve_mixin:26] Fixing source code reference lines for the analysis: # 📦 Abstract Components Overview
+**Component:** `CLI Interface`
+   - *Description*: Manages all command-line user interactions, including argument parsing, displaying agent output, and handling user prompts. It serves as the primary input/output gateway for the system.
+   - *Related Classes/Methods*: `QName:`src.main.main` FileRef: `src/main.py`, Lines:(96:191)`
+**Component:** `Agent Core (ReACT Orchestrator)`
+   - *Description*: The central intelligence, implementing the ReACT loop for reasoning, planning, and action orchestration. It drives decision-making by interacting with the LLM and dispatching tool actions.
+   - *Related Classes/Methods*: `QName:`src.agent.react_agent.create_coding_agent` FileRef: `src/agent/react_agent.py`, Lines:(13:43)`, `QName:`src.main.main` FileRef: `src/main.py`, Lines:(144:147)`, `QName:`src.main.main` FileRef: `src/main.py`, Lines:(170:173)`
+**Component:** `LLM Interface (Google Gemini)`
+   - *Description*: Provides a standardized interface for communicating with the Google Gemini Large Language Model, handling prompt formatting, request submission, and response parsing.
+   - *Related Classes/Methods*: `QName:`langchain_google_genai.ChatGoogleGenerativeAI` FileRef: `src/agent/react_agent.py`, Lines:(28:32)`
+**Component:** `Tooling Layer (via Tool Executor)`
+   - *Description*: A unified layer for executing various agent tools. The Tool Executor dispatches requests to specialized tools such as the File System Tool (for file I/O), Code Quality Tool (Pylint) (for static analysis), and Bash Command Tool (for shell commands).
+   - *Related Classes/Methods*: `QName:`src.tools.file_tools.read_file` FileRef: `src/agent/react_agent.py``, `QName:`src.tools.file_tools.write_file` FileRef: `src/agent/react_agent.py``, `QName:`src.tools.lint_tools.lint_file` FileRef: `src/agent/react_agent.py``, `QName:`src.tools.bash_tools.run_bash_command` FileRef: `src/agent/react_agent.py``
+**Component:** `Memory Management`
+   - *Description*: Stores and retrieves conversational history, agent state, and observations to maintain context and inform future decisions within the ReACT loop.
+   - *Related Classes/Methods*: `QName:`langgraph.checkpoint.memory.MemorySaver` FileRef: `src/agent/react_agent.py``
+**Component:** `Configuration Manager`
+   - *Description*: Manages application-wide settings, environment variables, and API keys, ensuring components have access to necessary configuration parameters.
+   - *Related Classes/Methods*: `QName:`src.config.get_google_api_key` FileRef: `src/config.py`, Lines:(13:18)`(CLI Interface, Manages Agent Interaction, Agent Core (ReACT Orchestrator))
+(Agent Core (ReACT Orchestrator), Manages Agent Context, Memory Management)
+(Agent Core (ReACT Orchestrator), Exchanges LLM Prompts and Responses, LLM Interface (Google Gemini))
+(Agent Core (ReACT Orchestrator), Orchestrates Tool Execution, Tooling Layer (via Tool Executor))
+(Configuration Manager, Supplies LLM Configuration, LLM Interface (Google Gemini))
+(Configuration Manager, Provides Agent Configuration, Agent Core (ReACT Orchestrator))
+2025-10-30 14:27:01 INFO     [static_analyzer.reference_resolve_mixin:64] [Reference Resolution] Matched src.main.main in Python at /Users/imilev/StartUp/hb-coding-agent/src/main.py
+2025-10-30 14:27:01 INFO     [static_analyzer.reference_resolve_mixin:64] [Reference Resolution] Matched src.agent.react_agent.create_coding_agent in Python at /Users/imilev/StartUp/hb-coding-agent/src/agent/react_agent.py
+2025-10-30 14:27:01 INFO     [static_analyzer.reference_resolve_mixin:64] [Reference Resolution] Matched src.main.main in Python at /Users/imilev/StartUp/hb-coding-agent/src/main.py
+2025-10-30 14:27:01 INFO     [static_analyzer.reference_resolve_mixin:64] [Reference Resolution] Matched src.main.main in Python at /Users/imilev/StartUp/hb-coding-agent/src/main.py
+2025-10-30 14:27:01 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for langchain_google_genai.ChatGoogleGenerativeAI in Python: Source code reference for 'langchain_google_genai.ChatGoogleGenerativeAI' in language 'Python' not found in results.
+2025-10-30 14:27:01 INFO     [static_analyzer.reference_resolve_mixin:103] [Reference Resolution] File path matched for langchain_google_genai.ChatGoogleGenerativeAI in Python at /Users/imilev/StartUp/hb-coding-agent/src/agent/react_agent.py
+2025-10-30 14:27:01 INFO     [static_analyzer.reference_resolve_mixin:64] [Reference Resolution] Matched src.tools.file_tools.read_file in Python at /Users/imilev/StartUp/hb-coding-agent/src/tools/file_tools.py
+2025-10-30 14:27:01 INFO     [static_analyzer.reference_resolve_mixin:64] [Reference Resolution] Matched src.tools.file_tools.write_file in Python at /Users/imilev/StartUp/hb-coding-agent/src/tools/file_tools.py
+2025-10-30 14:27:01 INFO     [static_analyzer.reference_resolve_mixin:64] [Reference Resolution] Matched src.tools.lint_tools.lint_file in Python at /Users/imilev/StartUp/hb-coding-agent/src/tools/lint_tools.py
+2025-10-30 14:27:01 INFO     [static_analyzer.reference_resolve_mixin:64] [Reference Resolution] Matched src.tools.bash_tools.run_bash_command in Python at /Users/imilev/StartUp/hb-coding-agent/src/tools/bash_tools.py
+2025-10-30 14:27:01 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for langgraph.checkpoint.memory.MemorySaver in Python: Source code reference for 'langgraph.checkpoint.memory.MemorySaver' in language 'Python' not found in results.
+2025-10-30 14:27:01 INFO     [static_analyzer.reference_resolve_mixin:103] [Reference Resolution] File path matched for langgraph.checkpoint.memory.MemorySaver in Python at /Users/imilev/StartUp/hb-coding-agent/src/agent/react_agent.py
+2025-10-30 14:27:01 INFO     [static_analyzer.reference_resolve_mixin:64] [Reference Resolution] Matched src.config.get_google_api_key in Python at /Users/imilev/StartUp/hb-coding-agent/src/config.py
+2025-10-30 14:27:12 INFO     [agents.tools.read_source:46] [Source Reference Tool] Reading source code for src.agent.react_agent.create_coding_agent
+2025-10-30 14:27:12 INFO     [agents.tools.read_source:96] [Source Reference Tool] Success, reading from: /Users/imilev/StartUp/hb-coding-agent/src/agent/react_agent.py.
+2025-10-30 14:27:46 INFO     [agents.tools.read_source:46] [Source Reference Tool] Reading source code for langgraph.checkpoint.memory.MemorySaver
+2025-10-30 14:27:46 WARNING  [agents.tools.read_source:59] [Source Reference Tool] No reference found for langgraph.checkpoint.memory.MemorySaver in Python.
+2025-10-30 14:27:46 WARNING  [agents.tools.read_source:63] [Source Reference Tool] No loose reference found for langgraph.checkpoint.memory.MemorySaver in Python.
+2025-10-30 14:27:46 WARNING  [agents.tools.read_source:74] [Source Reference Tool] No source code reference found for langgraph.checkpoint.memory.MemorySaver in any language. Suggesting to use our file read tooling.
+2025-10-30 14:28:03 INFO     [diagram_analysis.diagram_generator:130] Found 4 components to analyze at level 0
+2025-10-30 14:28:03 INFO     [agents.abstraction_agent:120] [AbstractionAgent] Classifying files for project: hb-coding-agent
+2025-10-30 14:28:14 WARNING  [langchain_google_genai._function_utils:102] Key '$defs' is not supported in schema, ignoring
+2025-10-30 14:28:22 INFO     [diagram_analysis.diagram_generator:176] Analysis complete. Generated 1 analysis files

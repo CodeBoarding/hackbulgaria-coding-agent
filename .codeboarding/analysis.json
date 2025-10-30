@@ -1,110 +1,123 @@
 {
-  "description": "The `hb_coding_agent` operates through a clear, modular architecture. User commands are received via the **User Interface (CLI)**, which then initiates a request to the **Agent Core**. The `Agent Core` acts as the brain, processing user input and determining the necessary actions. For complex reasoning and code generation, it interacts with the **LLM Interface**, which abstracts the communication with the Google Gemini model. When external operations are required, the `Agent Core` consults the **Tool Registry** to discover and invoke specialized tools. These tools include the **File System Adapter** for interacting with the local file system and the **Code Quality Module** for performing static code analysis. All operational parameters and sensitive information are managed by the **Configuration Service**, which provides essential settings to the `Agent Core`, `LLM Interface`, and `Tool Registry`, ensuring secure and consistent application behavior. This design promotes clear separation of concerns, making the system maintainable and scalable.",
+  "description": "The Coding Agent operates through a clear, modular architecture centered around the Agent Core (ReACT Orchestrator). User interaction begins with the CLI Interface, which parses commands and displays the agent's progress and final output. The Agent Core, initialized with configurations from the Configuration Manager, orchestrates the entire ReACT loop. It manages conversational and operational context by interacting with Memory Management. For reasoning and decision-making, the Agent Core exchanges prompts and receives responses from the LLM Interface (Google Gemini), which in turn relies on the Configuration Manager for API keys. When actions are required, the Agent Core dispatches tasks to the Tooling Layer (via Tool Executor), which encompasses various specialized tools for file operations, code quality checks, and bash command execution. This design ensures a clear, unidirectional flow of control and data, optimizing for both maintainability and visual representation in diagrams.",
   "components": [
     {
-      "name": "User Interface (CLI)",
-      "description": "The primary interface for users to interact with the coding agent, handling command-line input and displaying outputs.",
+      "name": "CLI Interface",
+      "description": "Manages all command-line user interactions, including argument parsing, displaying agent output, and handling user prompts. It serves as the primary input/output gateway for the system.",
       "referenced_source_code": [
         {
-          "qualified_name": "src/main.py",
+          "qualified_name": "src.main.main",
           "reference_file": "src/main.py",
-          "reference_start_line": null,
-          "reference_end_line": null
+          "reference_start_line": 96,
+          "reference_end_line": 191
         }
       ],
       "assigned_files": [
         "src/main.py"
       ],
-      "can_expand": false
+      "can_expand": true
     },
     {
-      "name": "Agent Core",
-      "description": "The central orchestrator of the ReACT loop, interpreting user requests, managing LLM interactions, and deciding on tool usage.",
+      "name": "Agent Core (ReACT Orchestrator)",
+      "description": "The central intelligence, implementing the ReACT loop for reasoning, planning, and action orchestration. It drives decision-making by interacting with the LLM and dispatching tool actions.",
       "referenced_source_code": [
         {
-          "qualified_name": "src/agent/react_agent.py",
+          "qualified_name": "src.agent.react_agent.create_coding_agent",
           "reference_file": "src/agent/react_agent.py",
-          "reference_start_line": null,
-          "reference_end_line": null
+          "reference_start_line": 13,
+          "reference_end_line": 43
+        },
+        {
+          "qualified_name": "src.main.main",
+          "reference_file": "src/main.py",
+          "reference_start_line": 96,
+          "reference_end_line": 191
+        },
+        {
+          "qualified_name": "src.main.main",
+          "reference_file": "src/main.py",
+          "reference_start_line": 96,
+          "reference_end_line": 191
         }
       ],
       "assigned_files": [
-        "src/agent/react_agent.py",
-        "src/agent/__init__.py"
+        "src/agent/react_agent.py"
       ],
       "can_expand": true
     },
     {
-      "name": "LLM Interface",
-      "description": "Provides a standardized abstraction for interacting with the Google Gemini Large Language Model, managing prompt formatting and API communication.",
+      "name": "LLM Interface (Google Gemini)",
+      "description": "Provides a standardized interface for communicating with the Google Gemini Large Language Model, handling prompt formatting, request submission, and response parsing.",
       "referenced_source_code": [
         {
-          "qualified_name": "langchain_google_genai.chat_models",
-          "reference_file": "",
-          "reference_start_line": null,
-          "reference_end_line": null
+          "qualified_name": "langchain_google_genai.ChatGoogleGenerativeAI",
+          "reference_file": "src/agent/react_agent.py",
+          "reference_start_line": 28,
+          "reference_end_line": 32
+        }
+      ],
+      "assigned_files": [],
+      "can_expand": false
+    },
+    {
+      "name": "Tooling Layer (via Tool Executor)",
+      "description": "A unified layer for executing various agent tools. The Tool Executor dispatches requests to specialized tools such as the File System Tool (for file I/O), Code Quality Tool (Pylint) (for static analysis), and Bash Command Tool (for shell commands).",
+      "referenced_source_code": [
+        {
+          "qualified_name": "src.tools.file_tools.read_file",
+          "reference_file": "src/tools/file_tools.py",
+          "reference_start_line": 29,
+          "reference_end_line": 54
+        },
+        {
+          "qualified_name": "src.tools.file_tools.write_file",
+          "reference_file": "src/tools/file_tools.py",
+          "reference_start_line": 57,
+          "reference_end_line": 104
+        },
+        {
+          "qualified_name": "src.tools.lint_tools.lint_file",
+          "reference_file": "src/tools/lint_tools.py",
+          "reference_start_line": 13,
+          "reference_end_line": 146
+        },
+        {
+          "qualified_name": "src.tools.bash_tools.run_bash_command",
+          "reference_file": "src/tools/bash_tools.py",
+          "reference_start_line": 9,
+          "reference_end_line": 74
+        }
+      ],
+      "assigned_files": [
+        "src/tools/lint_tools.py",
+        "src/tools/file_tools.py",
+        "src/tools/bash_tools.py"
+      ],
+      "can_expand": true
+    },
+    {
+      "name": "Memory Management",
+      "description": "Stores and retrieves conversational history, agent state, and observations to maintain context and inform future decisions within the ReACT loop.",
+      "referenced_source_code": [
+        {
+          "qualified_name": "langgraph.checkpoint.memory.MemorySaver",
+          "reference_file": "src/agent/react_agent.py",
+          "reference_start_line": 38,
+          "reference_end_line": 38
         }
       ],
       "assigned_files": [],
       "can_expand": true
     },
     {
-      "name": "Tool Registry",
-      "description": "Manages the registration, discovery, and invocation of all available tools, acting as a central hub for tool execution.",
+      "name": "Configuration Manager",
+      "description": "Manages application-wide settings, environment variables, and API keys, ensuring components have access to necessary configuration parameters.",
       "referenced_source_code": [
         {
-          "qualified_name": "src/tools/__init__.py",
-          "reference_file": "src/tools/__init__.py",
-          "reference_start_line": null,
-          "reference_end_line": null
-        }
-      ],
-      "assigned_files": [
-        "src/tools/__init__.py"
-      ],
-      "can_expand": true
-    },
-    {
-      "name": "File System Adapter",
-      "description": "Provides a controlled and sandboxed interface for the agent to interact with the local file system, enabling read and write operations.",
-      "referenced_source_code": [
-        {
-          "qualified_name": "src/tools/file_tools.py",
-          "reference_file": "src/tools/file_tools.py",
-          "reference_start_line": null,
-          "reference_end_line": null
-        }
-      ],
-      "assigned_files": [
-        "src/tools/file_tools.py"
-      ],
-      "can_expand": false
-    },
-    {
-      "name": "Code Quality Module",
-      "description": "Integrates static code analysis tools to evaluate the quality, style, and potential issues within code generated or modified by the agent.",
-      "referenced_source_code": [
-        {
-          "qualified_name": "src.tools.lint_tools.py",
-          "reference_file": "src/tools/lint_tools.py",
-          "reference_start_line": 50,
-          "reference_end_line": 50
-        }
-      ],
-      "assigned_files": [
-        "src/tools/lint_tools.py"
-      ],
-      "can_expand": false
-    },
-    {
-      "name": "Configuration Service",
-      "description": "Centralized management for application settings, environment variables, and sensitive credentials, ensuring consistent behavior across components.",
-      "referenced_source_code": [
-        {
-          "qualified_name": "src/config.py",
+          "qualified_name": "src.config.get_google_api_key",
           "reference_file": "src/config.py",
-          "reference_start_line": null,
-          "reference_end_line": null
+          "reference_start_line": 13,
+          "reference_end_line": 18
         }
       ],
       "assigned_files": [
@@ -117,51 +130,43 @@
       "description": "Component for all unclassified files and utility functions (Utility functions/External Libraries/Dependencies)",
       "referenced_source_code": [],
       "assigned_files": [
-        "src/__init__.py"
+        "src/__init__.py",
+        "src/tools/__init__.py",
+        "src/agent/__init__.py"
       ],
       "can_expand": false
     }
   ],
   "components_relations": [
     {
-      "relation": "initiates",
-      "src_name": "User Interface (CLI)",
-      "dst_name": "Agent Core"
+      "relation": "Manages Agent Interaction",
+      "src_name": "CLI Interface",
+      "dst_name": "Agent Core (ReACT Orchestrator)"
     },
     {
-      "relation": "requests reasoning from",
-      "src_name": "Agent Core",
-      "dst_name": "LLM Interface"
+      "relation": "Manages Agent Context",
+      "src_name": "Agent Core (ReACT Orchestrator)",
+      "dst_name": "Memory Management"
     },
     {
-      "relation": "requests tool execution from",
-      "src_name": "Agent Core",
-      "dst_name": "Tool Registry"
+      "relation": "Exchanges LLM Prompts and Responses",
+      "src_name": "Agent Core (ReACT Orchestrator)",
+      "dst_name": "LLM Interface (Google Gemini)"
     },
     {
-      "relation": "provides access to",
-      "src_name": "Tool Registry",
-      "dst_name": "File System Adapter"
+      "relation": "Orchestrates Tool Execution",
+      "src_name": "Agent Core (ReACT Orchestrator)",
+      "dst_name": "Tooling Layer (via Tool Executor)"
     },
     {
-      "relation": "provides access to",
-      "src_name": "Tool Registry",
-      "dst_name": "Code Quality Module"
+      "relation": "Supplies LLM Configuration",
+      "src_name": "Configuration Manager",
+      "dst_name": "LLM Interface (Google Gemini)"
     },
     {
-      "relation": "provides operational settings to",
-      "src_name": "Configuration Service",
-      "dst_name": "Agent Core"
-    },
-    {
-      "relation": "configures",
-      "src_name": "Configuration Service",
-      "dst_name": "LLM Interface"
-    },
-    {
-      "relation": "configures",
-      "src_name": "Configuration Service",
-      "dst_name": "Tool Registry"
+      "relation": "Provides Agent Configuration",
+      "src_name": "Configuration Manager",
+      "dst_name": "Agent Core (ReACT Orchestrator)"
     }
   ]
 }
