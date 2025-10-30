@@ -62,6 +62,9 @@ def main():
     # Create agent with optional home directory
     agent = create_coding_agent(home_directory=args.home)
     
+    # Thread ID for maintaining conversation memory
+    thread_id = "default_session"
+    
     while True:
         try:
             # Get user input
@@ -76,7 +79,10 @@ def main():
             
             # Run agent
             print("\nAgent:")
-            result = agent.invoke({"messages": [("user", user_input)]})
+            result = agent.invoke(
+                {"messages": [("user", user_input)]},
+                config={"configurable": {"thread_id": thread_id}}
+            )
             
             # Display result
             for message in result["messages"]:

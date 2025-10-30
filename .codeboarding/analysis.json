@@ -1,31 +1,31 @@
 {
-  "description": "The Coding Agent is structured around a clear separation of concerns, facilitating a robust and extensible design. The CLI_Application serves as the primary user interface, handling input/output and orchestrating the agent's lifecycle. At its core, the Agent_Core implements the ReACT pattern, intelligently processing user requests, making decisions, and coordinating actions. It leverages the LLM_Interface to communicate with the underlying Large Language Model and utilizes FileSystem_Tools for interacting with the local file system. All components rely on the Configuration_Manager for centralized access to application settings and sensitive information, ensuring consistent behavior and secure operation. This modular design promotes maintainability and allows for independent evolution of each component.",
+  "description": "The HackBulgaria Coding Agent operates through a clear, modular architecture designed for interactive problem-solving. The CLI Interface serves as the primary entry point, handling user input and command-line arguments, then initiating the core agent's operations. The AI Agent Core acts as the central orchestrator, employing a ReACT (Reasoning and Acting) pattern to interpret user requests, plan actions, and execute tasks. This core intelligence leverages the LLM Integration Module for all interactions with the Google Gemini Language Model, enabling advanced natural language understanding and generation. Additionally, the File System Tools component provides the agent with essential capabilities to interact with the local file system, allowing it to read, write, and manage project files as required by its tasks. This structured approach ensures a robust and extensible system for automated coding assistance.",
   "components": [
     {
-      "name": "CLI_Application",
-      "description": "The user-facing interface, responsible for parsing command-line arguments, managing the input/output loop, and displaying agent responses. It acts as the orchestrator for the agent's lifecycle.",
+      "name": "CLI Interface",
+      "description": "Manages user interaction, parses command-line arguments, and serves as the entry point for the agent.",
       "referenced_source_code": [
         {
           "qualified_name": "src.main.main",
           "reference_file": "src/main.py",
           "reference_start_line": 46,
-          "reference_end_line": 91
+          "reference_end_line": 97
         }
       ],
       "assigned_files": [
         "src/main.py"
       ],
-      "can_expand": true
+      "can_expand": false
     },
     {
-      "name": "Agent_Core",
-      "description": "The intelligent core of the application, implementing the ReACT (Reasoning and Acting) pattern. It interprets user requests, decides on actions, interacts with the LLM for reasoning, and invokes appropriate tools.",
+      "name": "AI Agent Core",
+      "description": "The central intelligence and orchestration component, responsible for reasoning, planning, and task execution using the ReACT pattern.",
       "referenced_source_code": [
         {
           "qualified_name": "src.agent.react_agent.create_coding_agent",
           "reference_file": "src/agent/react_agent.py",
-          "reference_start_line": 10,
-          "reference_end_line": 37
+          "reference_start_line": 11,
+          "reference_end_line": 41
         }
       ],
       "assigned_files": [
@@ -34,22 +34,30 @@
       "can_expand": true
     },
     {
-      "name": "LLM_Interface",
-      "description": "Provides an abstraction layer for communication with the Large Language Model. It handles sending prompts and receiving structured responses, abstracting away the specifics of the LLM provider.",
+      "name": "LLM Integration Module",
+      "description": "Handles communication with the Google Gemini Language Model, managing API calls and responses.",
       "referenced_source_code": [
         {
           "qualified_name": "langchain_google_genai.ChatGoogleGenerativeAI",
-          "reference_file": "I cannot fulfill this request. The list of files to choose from is empty, and I am instructed to select exactly one file path from the provided list without inventing or modifying paths.",
+          "reference_file": ".",
           "reference_start_line": null,
           "reference_end_line": null
+        },
+        {
+          "qualified_name": "src.config.get_google_api_key",
+          "reference_file": "src/config.py",
+          "reference_start_line": 13,
+          "reference_end_line": 18
         }
       ],
-      "assigned_files": [],
+      "assigned_files": [
+        "src/config.py"
+      ],
       "can_expand": true
     },
     {
-      "name": "FileSystem_Tools",
-      "description": "A dedicated module offering functionalities for the agent to interact with the local file system. This includes reading existing files and writing new content.",
+      "name": "File System Tools",
+      "description": "Provides functionalities for interacting with the local file system, enabling the agent to read, write, and manage project files.",
       "referenced_source_code": [
         {
           "qualified_name": "src.tools.file_tools.read_file",
@@ -70,22 +78,6 @@
       "can_expand": false
     },
     {
-      "name": "Configuration_Manager",
-      "description": "Centralizes the management of application settings, environment variables, and sensitive information like API keys. It ensures that various components can access necessary configurations.",
-      "referenced_source_code": [
-        {
-          "qualified_name": "src.config.get_google_api_key",
-          "reference_file": "src/config.py",
-          "reference_start_line": 13,
-          "reference_end_line": 18
-        }
-      ],
-      "assigned_files": [
-        "src/config.py"
-      ],
-      "can_expand": false
-    },
-    {
       "name": "Unclassified",
       "description": "Component for all unclassified files and utility functions (Utility functions/External Libraries/Dependencies)",
       "referenced_source_code": [],
@@ -100,33 +92,18 @@
   "components_relations": [
     {
       "relation": "invokes",
-      "src_name": "CLI_Application",
-      "dst_name": "Agent_Core"
+      "src_name": "CLI Interface",
+      "dst_name": "AI Agent Core"
     },
     {
-      "relation": "sends prompts to",
-      "src_name": "Agent_Core",
-      "dst_name": "LLM_Interface"
+      "relation": "utilizes",
+      "src_name": "AI Agent Core",
+      "dst_name": "LLM Integration Module"
     },
     {
-      "relation": "invokes",
-      "src_name": "Agent_Core",
-      "dst_name": "FileSystem_Tools"
-    },
-    {
-      "relation": "accesses config from",
-      "src_name": "Agent_Core",
-      "dst_name": "Configuration_Manager"
-    },
-    {
-      "relation": "retrieves config from",
-      "src_name": "LLM_Interface",
-      "dst_name": "Configuration_Manager"
-    },
-    {
-      "relation": "retrieves config from",
-      "src_name": "FileSystem_Tools",
-      "dst_name": "Configuration_Manager"
+      "relation": "utilizes",
+      "src_name": "AI Agent Core",
+      "dst_name": "File System Tools"
     }
   ]
 }

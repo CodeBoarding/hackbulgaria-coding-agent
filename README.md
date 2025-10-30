@@ -45,9 +45,28 @@ Example commands:
 ## Features
 
 - **ReACT Agent**: Uses reasoning and acting pattern for task completion
+- **Conversation Memory**: Remembers conversation context throughout the session
 - **File Reading**: Read files with line numbers
 - **File Writing**: Write or modify files at specific line ranges
+- **Home Directory Support**: Sandboxed operations within a specified directory
 - **Google Gemini**: Powered by Google's Gemini LLM
+
+## How It Works
+
+The agent maintains conversation memory during your session, allowing it to:
+- Remember previous questions and answers
+- Understand context from earlier in the conversation
+- Respond to confirmations like "yes" or "no" based on what was discussed
+
+Example conversation flow:
+```
+You: Should I create a Django project structure?
+Agent: I can create the following files... Should I proceed?
+You: Yes
+Agent: [Creates the files based on the previous context]
+```
+
+Memory persists throughout your CLI session and clears when you exit.
 
 ## Development
 
