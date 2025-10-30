@@ -8,6 +8,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from src.agent.react_agent import create_coding_agent
+from src.agent.orchestrator import orchestrate_multi_agent
 
 # System prompt for the coding agent
 SYSTEM_PROMPT = """You are an expert coding assistant specialized in Python development. Your role is to help users with their coding tasks by:
@@ -102,14 +103,61 @@ def main():
         default=None,
         help="Home directory for the agent (where it will create/read files)"
     )
+    parser.add_argument(
+        "--multi-agent",
+        action="store_true",
+        help="Use multi-agent mode (planning + implementation + validation agents)"
+    )
     args = parser.parse_args()
     
     print("=== HackBulgaria Coding Agent ===")
     if args.home:
         print(f"Working directory: {args.home}")
+    if args.multi_agent:
+        print("Mode: Multi-Agent (Planning → Implementation → Validation)")
+    else:
+        print("Mode: Single Agent")
     print("Type your request or 'quit' to exit\n")
     
-    # Create agent with optional home directory
+    # Multi-agent mode
+    if args.multi_agent:
+        while True:
+            try:
+                # Get user input
+                user_input = input("You: ").strip()
+                
+                if user_input.lower() in ['quit', 'exit', 'q']:
+                    print("Goodbye!")
+                    break
+                
+                if not user_input:
+                    continue
+                
+                # Run multi-agent orchestration
+                result = orchestrate_multi_agent(user_input, home_directory=args.home)
+                
+                # Display final summary
+                print("\n" + "="*70)
+                print("FINAL SUMMARY")
+                print("="*70)
+                print(f"\nStatus: {result['status']}")
+                print(f"Fix iterations: {result['iterations']}")
+                
+                if result['status'] == 'approved':
+                    print("\n✅ Implementation approved and ready!")
+                else:
+                    print("\n⚠️  Implementation needs review.")
+                
+                print("\n" + "="*70 + "\n")
+                
+            except KeyboardInterrupt:
+                print("\n\nGoodbye!")
+                break
+            except Exception as e:
+                print(f"Error: {str(e)}\n")
+        return
+    
+    # Single agent mode (existing)
     agent = create_coding_agent(home_directory=args.home)
     
     # Thread ID for maintaining conversation memory

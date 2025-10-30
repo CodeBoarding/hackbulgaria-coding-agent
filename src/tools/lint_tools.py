@@ -7,15 +7,18 @@ import sys
 import ast
 from pylint.lint import Run
 from pylint.reporters.text import TextReporter
-from src.tools.file_tools import _resolve_path
+from src.tools.file_tools import _resolve_path, _home_directory
 
 
 @tool
 def lint_file(file_path: str) -> str:
     """Run pylint on a Python file and return linting results.
     
+    File paths are resolved relative to the home directory (set via --home flag).
+    First checks for syntax errors via AST parsing, then runs pylint for quality checks.
+    
     Args:
-        file_path: Path to the Python file to lint
+        file_path: Path to the Python file to lint (relative to home directory if set)
         
     Returns:
         Formatted linting results with score, errors, and warnings

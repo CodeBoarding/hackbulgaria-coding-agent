@@ -30,6 +30,9 @@ def _resolve_path(file_path: str) -> Path:
 def read_file(file_path: str) -> str:
     """Read content from a file with line numbers.
     
+    File paths are resolved relative to the home directory (set via --home flag).
+    Absolute paths are also supported.
+    
     Args:
         file_path: Path to the file to read (relative to home directory if set)
         
@@ -57,6 +60,9 @@ def read_file(file_path: str) -> str:
 @tool
 def write_file(file_path: str, content: str, start_line: int = 1, end_line: int = -1) -> str:
     """Write content to a file at specified line range.
+    
+    File paths are resolved relative to the home directory (set via --home flag).
+    Absolute paths are also supported. Directories are created automatically if needed.
     
     Args:
         file_path: Path to the file to write (relative to home directory if set)

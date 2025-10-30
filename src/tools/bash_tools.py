@@ -3,12 +3,14 @@
 from langchain_core.tools import tool
 from pathlib import Path
 import subprocess
-from src.tools.file_tools import _home_directory
 
 
 @tool
 def run_bash_command(command: str) -> str:
     """Run a bash command to explore the codebase.
+    
+    All commands execute in the home directory context (set via --home flag).
+    Relative paths are automatically resolved relative to the home directory.
     
     Useful for:
     - Listing directory contents (ls, find, tree)
@@ -39,8 +41,11 @@ def run_bash_command(command: str) -> str:
             return f"Error: Command blocked for safety reasons. Pattern '{pattern}' is not allowed."
     
     try:
+        # Import the global variable at runtime to ensure we get the current value
+        from src.tools.file_tools import _home_directory as home_dir
+        
         # Set working directory to home directory if set
-        cwd = str(_home_directory) if _home_directory else None
+        cwd = str(home_dir) if home_dir else None
         
         # Run command with timeout
         result = subprocess.run(

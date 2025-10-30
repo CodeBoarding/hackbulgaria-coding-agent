@@ -19,5 +19,5 @@ def get_google_api_key() -> str:
 
 
 # Model configuration
-MODEL_NAME = "gemini-2.5-flash"
+MODEL_NAME = "gemini-2.5-pro"
 TEMPERATURE = 0.7
