@@ -8,6 +8,7 @@ from src.tools.bash_tools import run_bash_command
 from src.tools.search_tools import grep_search
 from src.config import get_google_api_key, MODEL_NAME, TEMPERATURE
 from src.agent.models import PlanOutput
+from src.agent.extractors import extract_plan
 from typing import Optional
 
 
@@ -110,39 +111,33 @@ def create_planning_agent(home_directory: Optional[str] = None):
 
 
 def extract_plan_from_response(response: dict) -> PlanOutput:
-    """Extract the structured plan from agent response and parse into Pydantic model.
+    """Extract the structured plan from agent response using trustcall extractor.
     
     Args:
         response: Agent response containing messages
         
     Returns:
-        PlanOutput object (parsed from agent's JSON output)
+        PlanOutput object (extracted using trustcall)
     """
-    import json
-    import re
-    
     # Get the last AI message
     messages = response.get("messages", [])
     for message in reversed(messages):
         if hasattr(message, 'type') and message.type == 'ai':
             content = message.content
             
-            if isinstance(content, str):
-                # Look for JSON block in markdown code fence
-                json_match = re.search(r'```json\s*(\{.*?\})\s*```', content, re.DOTALL)
-                if json_match:
-                    try:
-                        data = json.loads(json_match.group(1))
-                        return PlanOutput(**data)
-                    except (json.JSONDecodeError, Exception) as e:
-                        print(f"Warning: Failed to parse JSON from markdown: {e}")
-                
-                # Try to parse the entire content as JSON
-                try:
-                    data = json.loads(content)
-                    return PlanOutput(**data)
-                except (json.JSONDecodeError, Exception):
-                    pass
+            # Handle content as list of blocks (new format)
+            if isinstance(content, list):
+                # Extract text from content blocks
+                text_parts = []
+                for block in content:
+                    if isinstance(block, dict) and block.get('type') == 'text':
+                        text_parts.append(block.get('text', ''))
+                content = '\n'.join(text_parts)
+            
+            # Handle content as string (old format)
+            if isinstance(content, str) and len(content.strip()) > 50:
+                # Use trustcall extractor to extract structured plan
+                return extract_plan(content)
     
     # Fallback: return minimal plan
     return PlanOutput(

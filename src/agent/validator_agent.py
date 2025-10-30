@@ -8,6 +8,7 @@ from src.tools.git_tools import git_diff, git_status
 from src.tools.lint_tools import lint_file
 from src.config import get_google_api_key, MODEL_NAME, TEMPERATURE
 from src.agent.models import ValidationReport
+from src.agent.extractors import extract_validation
 from typing import Optional
 
 
@@ -97,39 +98,33 @@ def create_validator_agent(home_directory: Optional[str] = None):
 
 
 def extract_validation_report(response: dict) -> ValidationReport:
-    """Extract the validation report from agent response and parse into Pydantic model.
+    """Extract the validation report from agent response using trustcall extractor.
     
     Args:
         response: Agent response containing messages
         
     Returns:
-        ValidationReport object (parsed from agent's JSON output)
+        ValidationReport object (extracted using trustcall)
     """
-    import json
-    import re
-    
     # Get the last AI message
     messages = response.get("messages", [])
     for message in reversed(messages):
         if hasattr(message, 'type') and message.type == 'ai':
             content = message.content
             
-            if isinstance(content, str):
-                # Look for JSON block in markdown code fence
-                json_match = re.search(r'```json\s*(\{.*?\})\s*```', content, re.DOTALL)
-                if json_match:
-                    try:
-                        data = json.loads(json_match.group(1))
-                        return ValidationReport(**data)
-                    except (json.JSONDecodeError, Exception) as e:
-                        print(f"Warning: Failed to parse JSON from markdown: {e}")
-                
-                # Try to parse the entire content as JSON
-                try:
-                    data = json.loads(content)
-                    return ValidationReport(**data)
-                except (json.JSONDecodeError, Exception):
-                    pass
+            # Handle content as list of blocks (new format)
+            if isinstance(content, list):
+                # Extract text from content blocks
+                text_parts = []
+                for block in content:
+                    if isinstance(block, dict) and block.get('type') == 'text':
+                        text_parts.append(block.get('text', ''))
+                content = '\n'.join(text_parts)
+            
+            # Handle content as string (old format)
+            if isinstance(content, str) and len(content.strip()) > 50:
+                # Use trustcall extractor to extract structured report
+                return extract_validation(content)
     
     # Fallback: return report with needs_fixes
     return ValidationReport(

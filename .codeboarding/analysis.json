@@ -1,12 +1,33 @@
 {
-  "description": "The `hb-coding-agent` project is structured around a central `Agent Core` that orchestrates interactions between various specialized components. User commands are received via the `User Interface (CLI)`, which then initiates a reasoning and action loop within the `Agent Core`. The `Agent Core` leverages an `LLM Interface` to interact with a Large Language Model for decision-making and content generation. To perform specific tasks, the `Agent Core` utilizes a `Tool Registry/Executor` to access and execute various `Tools`, including a `File System Adapter` for file operations and a `Code Quality Module` for code analysis. `Memory Management` maintains conversational context and state throughout the agent's operation, while a `Configuration Service` provides essential settings to all components. This modular design promotes clear separation of concerns, making the system maintainable and extensible.",
+  "description": "The project's architecture is centered around an `Agent Orchestrator` that acts as the central intelligence, coordinating user interactions, managing conversational context, and delegating tasks to specialized tools and the Large Language Model (LLM). The `User Interface` serves as the primary communication channel, facilitating user commands and displaying results. `Conversation Memory` maintains the historical context of interactions, while the `LLM Interface` handles all communication with the underlying language model. A `Tool Manager` dispatches requests to various `File System Tools` and `Code Analysis Tools` for external operations. All components rely on the `Configuration Manager` for retrieving necessary application, LLM, and tool-specific settings. This design promotes modularity, allowing for independent development and maintenance of each component.",
   "components": [
     {
-      "name": "User Interface (CLI)",
-      "description": "The primary command-line interface for users to interact with the coding agent, responsible for receiving user commands and displaying agent outputs.",
+      "name": "Agent Orchestrator",
+      "description": "The core intelligence, interpreting user requests, orchestrating reasoning, and coordinating interactions.",
       "referenced_source_code": [
         {
-          "qualified_name": "src/main.py",
+          "qualified_name": "src.agent.orchestrator",
+          "reference_file": "src/agent/orchestrator.py",
+          "reference_start_line": null,
+          "reference_end_line": null
+        }
+      ],
+      "assigned_files": [
+        "src/agent/orchestrator.py",
+        "src/agent/react_agent.py",
+        "src/agent/extractors.py",
+        "src/agent/validator_agent.py",
+        "src/agent/planning_agent.py",
+        "src/agent/implementation_agent.py"
+      ],
+      "can_expand": true
+    },
+    {
+      "name": "User Interface",
+      "description": "Manages all user input and output, acting as the primary communication channel.",
+      "referenced_source_code": [
+        {
+          "qualified_name": "src.main",
           "reference_file": "src/main.py",
           "reference_start_line": null,
           "reference_end_line": null
@@ -15,34 +36,14 @@
       "assigned_files": [
         "src/main.py"
       ],
-      "can_expand": true
+      "can_expand": false
     },
     {
-      "name": "Agent Core",
-      "description": "The orchestrator of the ReACT loop, responsible for reasoning, decision-making, managing the overall workflow, and coordinating interactions between other components.",
+      "name": "Conversation Memory",
+      "description": "Stores and retrieves the history of interactions, providing essential conversational context.",
       "referenced_source_code": [
         {
-          "qualified_name": "src/agent/react_agent.py",
-          "reference_file": "src/agent/react_agent.py",
-          "reference_start_line": null,
-          "reference_end_line": null
-        }
-      ],
-      "assigned_files": [
-        "src/agent/react_agent.py",
-        "src/agent/validator_agent.py",
-        "src/agent/planning_agent.py",
-        "src/agent/orchestrator.py",
-        "src/agent/implementation_agent.py"
-      ],
-      "can_expand": true
-    },
-    {
-      "name": "LLM Interface",
-      "description": "Provides a standardized interface for communication with the underlying Large Language Model (Google Gemini), handling prompt formatting, request submission, and response parsing.",
-      "referenced_source_code": [
-        {
-          "qualified_name": "src/agent/models.py",
+          "qualified_name": "src.agent.models",
           "reference_file": "src/agent/models.py",
           "reference_start_line": null,
           "reference_end_line": null
@@ -54,44 +55,46 @@
       "can_expand": true
     },
     {
-      "name": "Tool Registry/Executor",
-      "description": "Manages the registration, discovery, and execution of all available tools. It acts as a central hub for the Agent Core to invoke specific functionalities.",
+      "name": "LLM Interface",
+      "description": "Encapsulates all communication with the Large Language Model, handling prompts and responses.",
       "referenced_source_code": [
         {
-          "qualified_name": "src/tools/__init__.py",
+          "qualified_name": "src.agent.models",
+          "reference_file": "src/agent/models.py",
+          "reference_start_line": null,
+          "reference_end_line": null
+        }
+      ],
+      "assigned_files": [
+        "src/agent/models.py"
+      ],
+      "can_expand": true
+    },
+    {
+      "name": "Tool Manager",
+      "description": "A central registry and dispatcher for all external tools and actions the agent can perform.",
+      "referenced_source_code": [
+        {
+          "qualified_name": "src.tools",
           "reference_file": "src/tools/__init__.py",
           "reference_start_line": null,
           "reference_end_line": null
         }
       ],
       "assigned_files": [
+        "src/tools/__init__.py",
         "src/tools/git_tools.py",
         "src/tools/search_tools.py",
-        "src/tools/__init__.py",
         "src/tools/bash_tools.py"
       ],
       "can_expand": true
     },
     {
-      "name": "Memory Management",
-      "description": "Responsible for storing and retrieving the agent's conversational history, observations, and other relevant context to maintain continuity and state across interactions.",
+      "name": "File System Tools",
+      "description": "Provides actions for interacting with the file system (read, write, list files).",
       "referenced_source_code": [
         {
-          "qualified_name": "src/agent/react_agent.py",
-          "reference_file": "src/agent/react_agent.py",
-          "reference_start_line": null,
-          "reference_end_line": null
-        }
-      ],
-      "assigned_files": [],
-      "can_expand": true
-    },
-    {
-      "name": "File System Adapter",
-      "description": "Offers a controlled and sandboxed interface for the agent to perform file system operations (read, write, list directories), ensuring secure and isolated interactions with the local environment.",
-      "referenced_source_code": [
-        {
-          "qualified_name": "src/tools/file_tools.py",
+          "qualified_name": "src.tools.file_tools",
           "reference_file": "src/tools/file_tools.py",
           "reference_start_line": null,
           "reference_end_line": null
@@ -103,14 +106,14 @@
       "can_expand": false
     },
     {
-      "name": "Code Quality Module",
-      "description": "Integrates static code analysis tools (e.g., Pylint, McCabe) to evaluate code quality, identify style violations, and detect potential issues within generated or modified code.",
+      "name": "Code Analysis Tools",
+      "description": "Integrates with static analysis tools (e.g., Pylint) for code quality evaluation.",
       "referenced_source_code": [
         {
-          "qualified_name": "src.tools.lint_tools.py",
+          "qualified_name": "src.tools.lint_tools",
           "reference_file": "src/tools/lint_tools.py",
-          "reference_start_line": 53,
-          "reference_end_line": 53
+          "reference_start_line": null,
+          "reference_end_line": null
         }
       ],
       "assigned_files": [
@@ -119,11 +122,11 @@
       "can_expand": false
     },
     {
-      "name": "Configuration Service",
-      "description": "Centralized management for application settings, environment variables, API keys, and other sensitive credentials, providing configuration data to various components.",
+      "name": "Configuration Manager",
+      "description": "Manages application settings, API keys, and environment variables.",
       "referenced_source_code": [
         {
-          "qualified_name": "src/config.py",
+          "qualified_name": "src.config",
           "reference_file": "src/config.py",
           "reference_start_line": null,
           "reference_end_line": null
@@ -147,49 +150,49 @@
   ],
   "components_relations": [
     {
-      "relation": "sends commands to",
-      "src_name": "User Interface (CLI)",
-      "dst_name": "Agent Core"
+      "relation": "Facilitates user interaction and command processing.",
+      "src_name": "User Interface",
+      "dst_name": "Agent Orchestrator"
     },
     {
-      "relation": "sends requests to",
-      "src_name": "Agent Core",
+      "relation": "Manages conversational context.",
+      "src_name": "Agent Orchestrator",
+      "dst_name": "Conversation Memory"
+    },
+    {
+      "relation": "Orchestrates LLM interactions for reasoning.",
+      "src_name": "Agent Orchestrator",
       "dst_name": "LLM Interface"
     },
     {
-      "relation": "requests tool execution from",
-      "src_name": "Agent Core",
-      "dst_name": "Tool Registry/Executor"
+      "relation": "Delegates tasks requiring external tools.",
+      "src_name": "Agent Orchestrator",
+      "dst_name": "Tool Manager"
     },
     {
-      "relation": "invokes operations on",
-      "src_name": "Tool Registry/Executor",
-      "dst_name": "File System Adapter"
+      "relation": "Executes file system operations.",
+      "src_name": "Tool Manager",
+      "dst_name": "File System Tools"
     },
     {
-      "relation": "invokes analysis on",
-      "src_name": "Tool Registry/Executor",
-      "dst_name": "Code Quality Module"
+      "relation": "Performs code quality analysis.",
+      "src_name": "Tool Manager",
+      "dst_name": "Code Analysis Tools"
     },
     {
-      "relation": "interacts with",
-      "src_name": "Agent Core",
-      "dst_name": "Memory Management"
+      "relation": "Accesses application settings.",
+      "src_name": "Agent Orchestrator",
+      "dst_name": "Configuration Manager"
     },
     {
-      "relation": "provides settings to",
-      "src_name": "Configuration Service",
-      "dst_name": "Agent Core"
+      "relation": "Retrieves LLM-specific configurations.",
+      "src_name": "LLM Interface",
+      "dst_name": "Configuration Manager"
     },
     {
-      "relation": "provides settings to",
-      "src_name": "Configuration Service",
-      "dst_name": "LLM Interface"
-    },
-    {
-      "relation": "provides settings to",
-      "src_name": "Configuration Service",
-      "dst_name": "Tool Registry/Executor"
+      "relation": "Retrieves tool-specific configurations.",
+      "src_name": "Tool Manager",
+      "dst_name": "Configuration Manager"
     }
   ]
 }

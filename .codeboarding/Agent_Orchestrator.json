@@ -1,0 +1,236 @@
+{
+  "description": "This system defines a multi-agent orchestration pipeline where an Orchestrator coordinates specialized agents (Planning, Implementation, Validation) that execute different coding lifecycle phases. Each agent is instantiated via a corresponding factory, and their structured outputs are parsed using extractor functions that rely on a shared data model. The design promotes modularity, clear separation of responsibilities, and extensibility through composable agent creation and result extraction layers.",
+  "components": [
+    {
+      "name": "Orchestrator",
+      "description": "The central controller that manages the multi-phase agent workflow. It invokes factories to create agents, collects their responses, applies extractors, and coordinates the fix loop when validation fails.",
+      "referenced_source_code": [
+        {
+          "qualified_name": "agent.orchestrator.orchestrate_multi_agent",
+          "reference_file": "src/agent/orchestrator.py",
+          "reference_start_line": null,
+          "reference_end_line": null
+        }
+      ],
+      "assigned_files": [
+        "src/agent/orchestrator.py"
+      ],
+      "can_expand": true
+    },
+    {
+      "name": "ReACT Agent Base",
+      "description": "The foundational logic layer defining base agent reasoning and behavior, used by all specific agent factories.",
+      "referenced_source_code": [
+        {
+          "qualified_name": "agent.react_agent.create_coding_agent",
+          "reference_file": "src/agent/react_agent.py",
+          "reference_start_line": null,
+          "reference_end_line": null
+        }
+      ],
+      "assigned_files": [
+        "src/agent/react_agent.py"
+      ],
+      "can_expand": false
+    },
+    {
+      "name": "Planning Agent Factory",
+      "description": "Factory responsible for creating Planning Agents. Uses the base ReACT agent and configures it with read-only access and analytical tools.",
+      "referenced_source_code": [
+        {
+          "qualified_name": "agent.planning_agent.create_planning_agent",
+          "reference_file": "src/agent/planning_agent.py",
+          "reference_start_line": null,
+          "reference_end_line": null
+        }
+      ],
+      "assigned_files": [
+        "src/agent/planning_agent.py"
+      ],
+      "can_expand": false
+    },
+    {
+      "name": "Implementation Agent Factory",
+      "description": "Factory for creating Implementation Agents with read/write privileges and build/test capabilities.",
+      "referenced_source_code": [
+        {
+          "qualified_name": "agent.implementation_agent.create_implementation_agent",
+          "reference_file": "src/agent/implementation_agent.py",
+          "reference_start_line": null,
+          "reference_end_line": null
+        }
+      ],
+      "assigned_files": [
+        "src/agent/implementation_agent.py"
+      ],
+      "can_expand": false
+    },
+    {
+      "name": "Validator Agent Factory",
+      "description": "Factory for creating Validation Agents that evaluate implementation outcomes and manage Git-based validation.",
+      "referenced_source_code": [
+        {
+          "qualified_name": "agent.validator_agent.create_validator_agent",
+          "reference_file": "src/agent/validator_agent.py",
+          "reference_start_line": null,
+          "reference_end_line": null
+        }
+      ],
+      "assigned_files": [
+        "src/agent/validator_agent.py"
+      ],
+      "can_expand": false
+    },
+    {
+      "name": "Planning Agent",
+      "description": "Performs initial task breakdowns and strategy formation using tools like file reading and shell commands.",
+      "referenced_source_code": [
+        {
+          "qualified_name": "PLANNING_AGENT_PROMPT",
+          "reference_file": "src/agent/planning_agent.py",
+          "reference_start_line": 16,
+          "reference_end_line": 60
+        }
+      ],
+      "assigned_files": [],
+      "can_expand": false
+    },
+    {
+      "name": "Implementation Agent",
+      "description": "Executes coding tasks with file writing, linting, and command execution. Participates in fix loops if validation fails.",
+      "referenced_source_code": [
+        {
+          "qualified_name": "IMPLEMENTATION_AGENT_PROMPT",
+          "reference_file": "src/agent/implementation_agent.py",
+          "reference_start_line": 16,
+          "reference_end_line": 60
+        }
+      ],
+      "assigned_files": [],
+      "can_expand": false
+    },
+    {
+      "name": "Validation Agent",
+      "description": "Validates the implementation through static analysis, Git diffs, and linting feedback.",
+      "referenced_source_code": [
+        {
+          "qualified_name": "VALIDATION_AGENT_PROMPT",
+          "reference_file": "src/agent/validator_agent.py",
+          "reference_start_line": 16,
+          "reference_end_line": 60
+        }
+      ],
+      "assigned_files": [],
+      "can_expand": false
+    },
+    {
+      "name": "Extractors",
+      "description": "Handles structured response parsing using the Trustcall library. Provides specific extractors for planning, implementation, and validation reports.",
+      "referenced_source_code": [
+        {
+          "qualified_name": "agent.extractors",
+          "reference_file": "src/agent/extractors.py",
+          "reference_start_line": null,
+          "reference_end_line": null
+        }
+      ],
+      "assigned_files": [
+        "src/agent/extractors.py"
+      ],
+      "can_expand": false
+    },
+    {
+      "name": "Data Models",
+      "description": "Defines Pydantic models used for structured outputs across all extractors and agents.",
+      "referenced_source_code": [
+        {
+          "qualified_name": "agent.models",
+          "reference_file": "src/agent/models.py",
+          "reference_start_line": null,
+          "reference_end_line": null
+        }
+      ],
+      "assigned_files": [
+        "src/agent/models.py"
+      ],
+      "can_expand": false
+    }
+  ],
+  "components_relations": [
+    {
+      "relation": "creates",
+      "src_name": "Orchestrator",
+      "dst_name": "Planning Agent Factory"
+    },
+    {
+      "relation": "creates",
+      "src_name": "Orchestrator",
+      "dst_name": "Implementation Agent Factory"
+    },
+    {
+      "relation": "creates",
+      "src_name": "Orchestrator",
+      "dst_name": "Validator Agent Factory"
+    },
+    {
+      "relation": "uses",
+      "src_name": "Planning Agent Factory",
+      "dst_name": "ReACT Agent Base"
+    },
+    {
+      "relation": "uses",
+      "src_name": "Implementation Agent Factory",
+      "dst_name": "ReACT Agent Base"
+    },
+    {
+      "relation": "uses",
+      "src_name": "Validator Agent Factory",
+      "dst_name": "ReACT Agent Base"
+    },
+    {
+      "relation": "creates",
+      "src_name": "Planning Agent Factory",
+      "dst_name": "Planning Agent"
+    },
+    {
+      "relation": "creates",
+      "src_name": "Implementation Agent Factory",
+      "dst_name": "Implementation Agent"
+    },
+    {
+      "relation": "creates",
+      "src_name": "Validator Agent Factory",
+      "dst_name": "Validation Agent"
+    },
+    {
+      "relation": "extracts from",
+      "src_name": "Orchestrator",
+      "dst_name": "Extractors"
+    },
+    {
+      "relation": "defines models for",
+      "src_name": "Data Models",
+      "dst_name": "Extractors"
+    },
+    {
+      "relation": "returns structured output to",
+      "src_name": "Extractors",
+      "dst_name": "Orchestrator"
+    },
+    {
+      "relation": "sends responses to",
+      "src_name": "Planning Agent",
+      "dst_name": "Orchestrator"
+    },
+    {
+      "relation": "sends responses to",
+      "src_name": "Implementation Agent",
+      "dst_name": "Orchestrator"
+    },
+    {
+      "relation": "sends responses to",
+      "src_name": "Validation Agent",
+      "dst_name": "Orchestrator"
+    }
+  ]
+}

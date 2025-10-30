@@ -1095,3 +1095,466 @@ Component Configuration Service has hb_coding_agent/config/settings.py as an inc
 2025-10-30 15:43:16 INFO     [agents.abstraction_agent:120] [AbstractionAgent] Classifying files for project: hb-coding-agent
 2025-10-30 15:43:32 WARNING  [langchain_google_genai._function_utils:102] Key '$defs' is not supported in schema, ignoring
 2025-10-30 15:43:38 INFO     [diagram_analysis.diagram_generator:176] Analysis complete. Generated 1 analysis files
+2025-10-30 15:45:06 WARNING  [utils:47] STATIC_ANALYSIS_CONFIG environment variable is not set, using default VSCode Setup.
+2025-10-30 15:45:06 WARNING  [utils:47] STATIC_ANALYSIS_CONFIG environment variable is not set, using default VSCode Setup.
+2025-10-30 15:45:06 INFO     [static_analyzer.scanner:60] Found: ProgrammingLanguage(language=Python, size=1517, percentage=100.0, suffixes=['.py', '.pyi'])
+2025-10-30 15:45:06 INFO     [static_analyzer.scanner:63] Added ProgrammingLanguage(language=Python, size=1517, percentage=100.0, suffixes=['.py', '.pyi'])
+2025-10-30 15:45:06 INFO     [static_analyzer:54] Starting static analysis for Python in /Users/imilev/StartUp/hb-coding-agent
+2025-10-30 15:45:06 INFO     [static_analyzer.lsp_client.client:69] Starting server /Users/imilev/.vscode/extensions/codeboarding.codeboarding-0.2.10/bin/macos/py-lsp --stdio...
+2025-10-30 15:45:06 INFO     [static_analyzer.lsp_client.client:155] Initializing connection for python...
+2025-10-30 15:58:55 WARNING  [utils:47] STATIC_ANALYSIS_CONFIG environment variable is not set, using default VSCode Setup.
+2025-10-30 15:58:55 WARNING  [utils:47] STATIC_ANALYSIS_CONFIG environment variable is not set, using default VSCode Setup.
+2025-10-30 15:58:55 INFO     [static_analyzer.scanner:60] Found: ProgrammingLanguage(language=Python, size=1578, percentage=100.0, suffixes=['.pyi', '.py'])
+2025-10-30 15:58:55 INFO     [static_analyzer.scanner:63] Added ProgrammingLanguage(language=Python, size=1578, percentage=100.0, suffixes=['.pyi', '.py'])
+2025-10-30 15:58:55 INFO     [static_analyzer:54] Starting static analysis for Python in /Users/imilev/StartUp/hb-coding-agent
+2025-10-30 15:58:55 INFO     [static_analyzer.lsp_client.client:69] Starting server /Users/imilev/.vscode/extensions/codeboarding.codeboarding-0.2.10/bin/macos/py-lsp --stdio...
+2025-10-30 15:58:55 INFO     [static_analyzer.lsp_client.client:155] Initializing connection for python...
+2025-10-30 15:58:55 INFO     [static_analyzer.lsp_client.client:179] Initialization successful.
+2025-10-30 15:58:55 INFO     [static_analyzer.lsp_client.client:339] Starting unified static analysis with multithreading...
+2025-10-30 15:58:55 INFO     [static_analyzer.lsp_client.client:362] Found 17 source files. Starting unified analysis...
+2025-10-30 15:58:55 INFO     [static_analyzer.lsp_client.client:369] Found 0 classes in workspace
+2025-10-30 15:58:55 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/__init__.py with ID 3
+2025-10-30 15:58:55 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/config.py with ID 4
+2025-10-30 15:58:55 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/main.py with ID 5
+2025-10-30 15:58:55 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/tools/git_tools.py with ID 6
+2025-10-30 15:58:55 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/tools/__init__.py with ID 7
+2025-10-30 15:58:55 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/tools/search_tools.py with ID 8
+2025-10-30 15:58:55 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/tools/lint_tools.py with ID 9
+2025-10-30 15:58:55 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/tools/file_tools.py with ID 10
+2025-10-30 15:58:55 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/agent/react_agent.py with ID 12
+2025-10-30 15:58:55 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/tools/bash_tools.py with ID 11
+2025-10-30 15:58:55 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/agent/models.py with ID 13
+2025-10-30 15:58:55 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/agent/extractors.py with ID 14
+2025-10-30 15:58:55 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/agent/__init__.py with ID 15
+2025-10-30 15:58:56 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/agent/validator_agent.py with ID 17
+2025-10-30 15:58:56 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/agent/planning_agent.py with ID 20
+2025-10-30 15:58:56 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/agent/orchestrator.py with ID 27
+2025-10-30 15:58:56 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/agent/implementation_agent.py with ID 188
+2025-10-30 15:58:59 INFO     [static_analyzer.lsp_client.client:396] Successfully processed 17 files
+2025-10-30 15:58:59 INFO     [static_analyzer.lsp_client.client:445] Unified static analysis complete.
+2025-10-30 15:58:59 INFO     [static_analyzer.lsp_client.client:446] Results: 306 references, 8 classes, 4 packages, 267 call graph nodes, 16 edges
+2025-10-30 15:58:59 INFO     [agents.meta_agent:31] [MetaAgent] Analyzing metadata for project: hb-coding-agent
+2025-10-30 15:59:00 INFO     [agents.tools.read_docs:82] [ReadDocs Tool] Reading file /Users/imilev/StartUp/hb-coding-agent/README.md around line 0
+2025-10-30 15:59:06 INFO     [agents.tools.external_deps:61] [ExternalDeps Tool] Searching for dependency files
+2025-10-30 15:59:06 INFO     [agents.tools.external_deps:92] [ExternalDeps Tool] Found 1 dependency file(s): requirements.txt
+2025-10-30 15:59:14 INFO     [agents.tools.read_docs:82] [ReadDocs Tool] Reading file /Users/imilev/StartUp/hb-coding-agent/requirements.txt around line 0
+2025-10-30 15:59:38 INFO     [agents.meta_agent:36] [MetaAgent] Completed metadata analysis for project: # 🎯 Project Metadata Analysis
+
+**Project Type:** AI Assistant / Coding Agent (specialized CLI tool)
+**Domain:** Artificial Intelligence/Machine Learning, Natural Language Processing (NLP), Code Generation and Validation.
+**Technology Stack:** Python 3.12, LangChain, LangGraph, Google Gemini (via `langchain-google-genai`, `google-ai-generativelanguage`), Pylint, uv, `python-dotenv`
+**Architectural Patterns:** Agentic Architecture (ReACT), Pipeline/Chain of Responsibility, Command Pattern, Memory Pattern
+**Expected Components:** Agent Orchestrator, LLM Interface, Tool/Action Modules, Conversation Memory, User Interface/Input-Output Handler, Configuration Manager
+**Architectural Bias:** Agent-centric design: Components should be organized around the agent's core functions: perceiving user input, reasoning with the LLM, and executing actions. Modular Tools: Emphasize the clear separation and encapsulation of each action (e.g., file operations, code validation) as distinct, reusable tools that the agent can invoke. Clear LLM interaction boundaries: The interface with the Large Language Model should be well-defined, distinguishing between prompt engineering, LLM invocation, and response interpretation. State management: Highlight how conversation memory is managed, persisted (for the session), and accessed by the agent to maintain context. Extensibility: The architecture should support easy addition of new tools or capabilities for the agent. Focus on flow: Architectural diagrams should clearly illustrate the flow of control and data through the agent's reasoning and action cycles, showing how user input leads to LLM interaction, tool selection, and output generation.
+
+2025-10-30 15:59:39 WARNING  [agents.diff_analyzer:50] [DiffAnalyzingAgent] No version file found, cannot get diff data
+2025-10-30 15:59:39 INFO     [diagram_analysis.diagram_generator:111] Generating initial analysis
+2025-10-30 15:59:39 INFO     [agents.diff_analyzer:87] [DiffAnalyzingAgent] No existing analysis found, running full analysis
+2025-10-30 15:59:39 INFO     [agents.abstraction_agent:43] [AbstractionAgent] Analyzing CFG for project: hb-coding-agent
+2025-10-30 16:00:05 WARNING  [langchain_google_genai._function_utils:102] Key '$defs' is not supported in schema, ignoring
+2025-10-30 16:00:28 INFO     [agents.abstraction_agent:68] [AbstractionAgent] Analyzing Source for project: hb-coding-agent
+2025-10-30 16:00:50 WARNING  [langchain_google_genai._function_utils:102] Key '$defs' is not supported in schema, ignoring
+2025-10-30 16:01:11 INFO     [agents.abstraction_agent:90] [AbstractionAgent] Generating final analysis for project: hb-coding-agent
+2025-10-30 16:01:48 WARNING  [langchain_google_genai._function_utils:102] Key '$defs' is not supported in schema, ignoring
+2025-10-30 16:02:11 INFO     [static_analyzer.reference_resolve_mixin:26] Fixing source code reference lines for the analysis: # 📦 Abstract Components Overview
+**Component:** `Agent Orchestrator`
+   - *Description*: The core intelligence, interpreting user requests, orchestrating reasoning, and coordinating interactions.
+   - *Related Classes/Methods*: `QName:`src/agent/agent.py` FileRef: `src/agent/agent.py``
+**Component:** `User Interface`
+   - *Description*: Manages all user input and output, acting as the primary communication channel.
+   - *Related Classes/Methods*: `QName:`src/cli/ui.py` FileRef: `src/cli/ui.py``
+**Component:** `Conversation Memory`
+   - *Description*: Stores and retrieves the history of interactions, providing essential conversational context.
+   - *Related Classes/Methods*: `QName:`src/agent/memory.py` FileRef: `src/agent/memory.py``
+**Component:** `LLM Interface`
+   - *Description*: Encapsulates all communication with the Large Language Model, handling prompts and responses.
+   - *Related Classes/Methods*: `QName:`src/agent/llm.py` FileRef: `src/agent/llm.py``
+**Component:** `Tool Manager`
+   - *Description*: A central registry and dispatcher for all external tools and actions the agent can perform.
+   - *Related Classes/Methods*: `QName:`src/tools/tool_manager.py` FileRef: `src/tools/tool_manager.py``
+**Component:** `File System Tools`
+   - *Description*: Provides actions for interacting with the file system (read, write, list files).
+   - *Related Classes/Methods*: `QName:`src/tools/file_operations.py` FileRef: `src/tools/file_operations.py``
+**Component:** `Code Analysis Tools`
+   - *Description*: Integrates with static analysis tools (e.g., Pylint) for code quality evaluation.
+   - *Related Classes/Methods*: `QName:`src/tools/code_validation.py` FileRef: `src/tools/code_validation.py``
+**Component:** `Configuration Manager`
+   - *Description*: Manages application settings, API keys, and environment variables.
+   - *Related Classes/Methods*: `QName:`src/config.py` FileRef: `src/config.py``(User Interface, Passes user commands and input for processing., Agent Orchestrator)
+(Agent Orchestrator, Stores and retrieves conversational context., Conversation Memory)
+(Agent Orchestrator, Sends prompts for reasoning and receives LLM responses., LLM Interface)
+(Agent Orchestrator, Requests the execution of specific tools., Tool Manager)
+(Tool Manager, Dispatches file manipulation requests., File System Tools)
+(Tool Manager, Dispatches code validation requests., Code Analysis Tools)
+(Agent Orchestrator, Outputs final responses and results to the user., User Interface)
+(Agent Orchestrator, Retrieves application settings., Configuration Manager)
+(LLM Interface, Retrieves LLM-specific configurations (e.g., API keys)., Configuration Manager)
+(Tool Manager, Retrieves tool-specific configurations., Configuration Manager)
+2025-10-30 16:02:11 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for src/agent/agent.py in Python: Source code reference for 'src.agent.agent.py' in language 'Python' not found in results.
+2025-10-30 16:02:14 INFO     [static_analyzer.reference_resolve_mixin:132] [Reference Resolution] LLM matched src/agent/agent.py at src/agent/agent.py
+2025-10-30 16:02:14 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for src/cli/ui.py in Python: Source code reference for 'src.cli.ui.py' in language 'Python' not found in results.
+2025-10-30 16:02:18 INFO     [static_analyzer.reference_resolve_mixin:132] [Reference Resolution] LLM matched src/cli/ui.py at src/cli/ui.py
+2025-10-30 16:02:18 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for src/agent/memory.py in Python: Source code reference for 'src.agent.memory.py' in language 'Python' not found in results.
+2025-10-30 16:02:21 INFO     [static_analyzer.reference_resolve_mixin:132] [Reference Resolution] LLM matched src/agent/memory.py at src/agent/memory.py
+2025-10-30 16:02:21 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for src/agent/llm.py in Python: Source code reference for 'src.agent.llm.py' in language 'Python' not found in results.
+2025-10-30 16:02:25 INFO     [static_analyzer.reference_resolve_mixin:132] [Reference Resolution] LLM matched src/agent/llm.py at src/agent/llm.py
+2025-10-30 16:02:25 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for src/tools/tool_manager.py in Python: Source code reference for 'src.tools.tool_manager.py' in language 'Python' not found in results.
+2025-10-30 16:02:28 INFO     [static_analyzer.reference_resolve_mixin:132] [Reference Resolution] LLM matched src/tools/tool_manager.py at src/tools/tool_manager.py
+2025-10-30 16:02:28 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for src/tools/file_operations.py in Python: Source code reference for 'src.tools.file_operations.py' in language 'Python' not found in results.
+2025-10-30 16:02:33 INFO     [static_analyzer.reference_resolve_mixin:132] [Reference Resolution] LLM matched src/tools/file_operations.py at src/tools/file_operations.py
+2025-10-30 16:02:33 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for src/tools/code_validation.py in Python: Source code reference for 'src.tools.code_validation.py' in language 'Python' not found in results.
+2025-10-30 16:02:38 INFO     [static_analyzer.reference_resolve_mixin:132] [Reference Resolution] LLM matched src/tools/code_validation.py at src/tools/code_validation.py
+2025-10-30 16:02:38 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for src/config.py in Python: Source code reference for 'src.config.py' in language 'Python' not found in results.
+2025-10-30 16:02:38 INFO     [static_analyzer.reference_resolve_mixin:103] [Reference Resolution] File path matched for src/config.py in Python at /Users/imilev/StartUp/hb-coding-agent/src/config.py
+2025-10-30 16:02:38 INFO     [agents.validator_agent:121] [ValidatorAgent] Running validation on the analysis.
+2025-10-30 16:03:23 INFO     [agents.validator_agent:140] [ValidatorAgent] Validation result: [Valid: False] with insights: **Feedback Information:**
+The validation criteria state: "Verify max 1 relationship per component pair".
+
+The component pair (User Interface, Agent Orchestrator) has two distinct relationships defined:
+1. (User Interface, Passes user commands and input for processing., Agent Orchestrator)
+2. (Agent Orchestrator, Outputs final responses and results to the user., User Interface)
+
+This violates the rule of having a maximum of one relationship per component pair, as both relationships involve the same two components. While these represent different directions of interaction, the instruction specifically limits the total number of relationships for any given pair of components to one.
+
+**Feedback Information:**
+Component Agent Orchestrator has src/agent/agent.py as an incorrect reference: 'QName:`src/agent/agent.py` FileRef: `src/agent/agent.py`'. src/agent/agent.py is INCORRECT reference, there is no such module or function/class/method in the project. Please reconsider by using `getSourceCode` tool to find the correct reference or validate with `readFile` tool if it is a file reference.
+Component User Interface has src/cli/ui.py as an incorrect reference: 'QName:`src/cli/ui.py` FileRef: `src/cli/ui.py`'. src/cli/ui.py is INCORRECT reference, there is no such module or function/class/method in the project. Please reconsider by using `getSourceCode` tool to find the correct reference or validate with `readFile` tool if it is a file reference.
+Component Conversation Memory has src/agent/memory.py as an incorrect reference: 'QName:`src/agent/memory.py` FileRef: `src/agent/memory.py`'. src/agent/memory.py is INCORRECT reference, there is no such module or function/class/method in the project. Please reconsider by using `getSourceCode` tool to find the correct reference or validate with `readFile` tool if it is a file reference.
+Component LLM Interface has src/agent/llm.py as an incorrect reference: 'QName:`src/agent/llm.py` FileRef: `src/agent/llm.py`'. src/agent/llm.py is INCORRECT reference, there is no such module or function/class/method in the project. Please reconsider by using `getSourceCode` tool to find the correct reference or validate with `readFile` tool if it is a file reference.
+Component Tool Manager has src/tools/tool_manager.py as an incorrect reference: 'QName:`src/tools/tool_manager.py` FileRef: `src/tools/tool_manager.py`'. src/tools/tool_manager.py is INCORRECT reference, there is no such module or function/class/method in the project. Please reconsider by using `getSourceCode` tool to find the correct reference or validate with `readFile` tool if it is a file reference.
+Component File System Tools has src/tools/file_operations.py as an incorrect reference: 'QName:`src/tools/file_operations.py` FileRef: `src/tools/file_operations.py`'. src/tools/file_operations.py is INCORRECT reference, there is no such module or function/class/method in the project. Please reconsider by using `getSourceCode` tool to find the correct reference or validate with `readFile` tool if it is a file reference.
+Component Code Analysis Tools has src/tools/code_validation.py as an incorrect reference: 'QName:`src/tools/code_validation.py` FileRef: `src/tools/code_validation.py`'. src/tools/code_validation.py is INCORRECT reference, there is no such module or function/class/method in the project. Please reconsider by using `getSourceCode` tool to find the correct reference or validate with `readFile` tool if it is a file reference.
+Component Configuration Manager has an incorrect reference: 'QName:`src/config.py` FileRef: `src/config.py`'. Expected: '/Users/imilev/StartUp/hb-coding-agent/src/config.py', but found: 'src/config.py'. Apply the correct reference please, maybe it is a full file reference, then validate with `readFile` tool.
+Component Configuration Manager has src/config.py as an incorrect reference: 'QName:`src/config.py` FileRef: `src/config.py`'. src/config.py is INCORRECT reference, there is no such module or function/class/method in the project. Please reconsider by using `getSourceCode` tool to find the correct reference or validate with `readFile` tool if it is a file reference.
+
+
+2025-10-30 16:03:23 INFO     [agents.abstraction_agent:108] [AbstractionAgent] Applying feedback to analysis for project: hb-coding-agent
+2025-10-30 16:03:30 INFO     [agents.tools.read_file_structure:77] [File Structure Tool] Found directory /Users/imilev/StartUp/hb-coding-agent/src
+2025-10-30 16:03:30 INFO     [agents.tools.read_file_structure:86] [File Structure Tool] Found directory /Users/imilev/StartUp/hb-coding-agent/src
+2025-10-30 16:03:30 INFO     [agents.tools.read_file_structure:95] [File Structure Tool] Reading file structure for /Users/imilev/StartUp/hb-coding-agent/src
+2025-10-30 16:04:00 WARNING  [langchain_google_genai._function_utils:102] Key '$defs' is not supported in schema, ignoring
+2025-10-30 16:04:20 INFO     [static_analyzer.reference_resolve_mixin:26] Fixing source code reference lines for the analysis: # 📦 Abstract Components Overview
+**Component:** `Agent Orchestrator`
+   - *Description*: The core intelligence, interpreting user requests, orchestrating reasoning, and coordinating interactions.
+   - *Related Classes/Methods*: `QName:`src.agent.orchestrator` FileRef: `src/agent/orchestrator.py``
+**Component:** `User Interface`
+   - *Description*: Manages all user input and output, acting as the primary communication channel.
+   - *Related Classes/Methods*: `QName:`src.main` FileRef: `src/main.py``
+**Component:** `Conversation Memory`
+   - *Description*: Stores and retrieves the history of interactions, providing essential conversational context.
+   - *Related Classes/Methods*: `QName:`src.agent.models` FileRef: `src/agent/models.py``
+**Component:** `LLM Interface`
+   - *Description*: Encapsulates all communication with the Large Language Model, handling prompts and responses.
+   - *Related Classes/Methods*: `QName:`src.agent.models` FileRef: `src/agent/models.py``
+**Component:** `Tool Manager`
+   - *Description*: A central registry and dispatcher for all external tools and actions the agent can perform.
+   - *Related Classes/Methods*: `QName:`src.tools` FileRef: `src/tools/__init__.py``
+**Component:** `File System Tools`
+   - *Description*: Provides actions for interacting with the file system (read, write, list files).
+   - *Related Classes/Methods*: `QName:`src.tools.file_tools` FileRef: `src/tools/file_tools.py``
+**Component:** `Code Analysis Tools`
+   - *Description*: Integrates with static analysis tools (e.g., Pylint) for code quality evaluation.
+   - *Related Classes/Methods*: `QName:`src.tools.lint_tools` FileRef: `src/tools/lint_tools.py``
+**Component:** `Configuration Manager`
+   - *Description*: Manages application settings, API keys, and environment variables.
+   - *Related Classes/Methods*: `QName:`src.config` FileRef: `src/config.py``(User Interface, Facilitates user interaction and command processing., Agent Orchestrator)
+(Agent Orchestrator, Manages conversational context., Conversation Memory)
+(Agent Orchestrator, Orchestrates LLM interactions for reasoning., LLM Interface)
+(Agent Orchestrator, Delegates tasks requiring external tools., Tool Manager)
+(Tool Manager, Executes file system operations., File System Tools)
+(Tool Manager, Performs code quality analysis., Code Analysis Tools)
+(Agent Orchestrator, Accesses application settings., Configuration Manager)
+(LLM Interface, Retrieves LLM-specific configurations., Configuration Manager)
+(Tool Manager, Retrieves tool-specific configurations., Configuration Manager)
+2025-10-30 16:04:20 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for src.agent.orchestrator in Python: Source code reference for 'src.agent.orchestrator' in language 'Python' is a file path, please use the full file path instead of the qualified name.
+2025-10-30 16:04:20 INFO     [static_analyzer.reference_resolve_mixin:103] [Reference Resolution] File path matched for src.agent.orchestrator in Python at /Users/imilev/StartUp/hb-coding-agent/src/agent/orchestrator.py
+2025-10-30 16:04:20 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for src.main in Python: Source code reference for 'src.main' in language 'Python' is a file path, please use the full file path instead of the qualified name.
+2025-10-30 16:04:20 INFO     [static_analyzer.reference_resolve_mixin:103] [Reference Resolution] File path matched for src.main in Python at /Users/imilev/StartUp/hb-coding-agent/src/main.py
+2025-10-30 16:04:20 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for src.agent.models in Python: Source code reference for 'src.agent.models' in language 'Python' is a file path, please use the full file path instead of the qualified name.
+2025-10-30 16:04:20 INFO     [static_analyzer.reference_resolve_mixin:103] [Reference Resolution] File path matched for src.agent.models in Python at /Users/imilev/StartUp/hb-coding-agent/src/agent/models.py
+2025-10-30 16:04:20 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for src.agent.models in Python: Source code reference for 'src.agent.models' in language 'Python' is a file path, please use the full file path instead of the qualified name.
+2025-10-30 16:04:20 INFO     [static_analyzer.reference_resolve_mixin:103] [Reference Resolution] File path matched for src.agent.models in Python at /Users/imilev/StartUp/hb-coding-agent/src/agent/models.py
+2025-10-30 16:04:20 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for src.tools in Python: Source code reference for 'src.tools' in language 'Python' is a file path, please use the full file path instead of the qualified name.
+2025-10-30 16:04:20 INFO     [static_analyzer.reference_resolve_mixin:103] [Reference Resolution] File path matched for src.tools in Python at /Users/imilev/StartUp/hb-coding-agent/src/tools/__init__.py
+2025-10-30 16:04:20 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for src.tools.file_tools in Python: Source code reference for 'src.tools.file_tools' in language 'Python' is a file path, please use the full file path instead of the qualified name.
+2025-10-30 16:04:20 INFO     [static_analyzer.reference_resolve_mixin:103] [Reference Resolution] File path matched for src.tools.file_tools in Python at /Users/imilev/StartUp/hb-coding-agent/src/tools/file_tools.py
+2025-10-30 16:04:20 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for src.tools.lint_tools in Python: Source code reference for 'src.tools.lint_tools' in language 'Python' is a file path, please use the full file path instead of the qualified name.
+2025-10-30 16:04:20 INFO     [static_analyzer.reference_resolve_mixin:103] [Reference Resolution] File path matched for src.tools.lint_tools in Python at /Users/imilev/StartUp/hb-coding-agent/src/tools/lint_tools.py
+2025-10-30 16:04:20 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for src.config in Python: Source code reference for 'src.config' in language 'Python' is a file path, please use the full file path instead of the qualified name.
+2025-10-30 16:04:20 INFO     [static_analyzer.reference_resolve_mixin:103] [Reference Resolution] File path matched for src.config in Python at /Users/imilev/StartUp/hb-coding-agent/src/config.py
+2025-10-30 16:04:23 INFO     [agents.tools.read_file_structure:77] [File Structure Tool] Found directory /Users/imilev/StartUp/hb-coding-agent/src/agent
+2025-10-30 16:04:23 INFO     [agents.tools.read_file_structure:86] [File Structure Tool] Found directory /Users/imilev/StartUp/hb-coding-agent/src/agent
+2025-10-30 16:04:23 INFO     [agents.tools.read_file_structure:95] [File Structure Tool] Reading file structure for /Users/imilev/StartUp/hb-coding-agent/src/agent
+2025-10-30 16:04:32 INFO     [agents.tools.read_file_structure:77] [File Structure Tool] Found directory /Users/imilev/StartUp/hb-coding-agent/src
+2025-10-30 16:04:32 INFO     [agents.tools.read_file_structure:86] [File Structure Tool] Found directory /Users/imilev/StartUp/hb-coding-agent/src
+2025-10-30 16:04:32 INFO     [agents.tools.read_file_structure:95] [File Structure Tool] Reading file structure for /Users/imilev/StartUp/hb-coding-agent/src
+2025-10-30 16:04:35 INFO     [agents.tools.read_file:49] [ReadFile Tool] Reading file src/main.py around line 1
+2025-10-30 16:04:35 INFO     [agents.tools.read_file:100] [ReadFile Tool] Successfully read 243 lines from src/main.py 
+2025-10-30 16:04:54 INFO     [agents.tools.read_file_structure:77] [File Structure Tool] Found directory /Users/imilev/StartUp/hb-coding-agent/src/agent
+2025-10-30 16:04:54 INFO     [agents.tools.read_file_structure:86] [File Structure Tool] Found directory /Users/imilev/StartUp/hb-coding-agent/src/agent
+2025-10-30 16:04:54 INFO     [agents.tools.read_file_structure:95] [File Structure Tool] Reading file structure for /Users/imilev/StartUp/hb-coding-agent/src/agent
+2025-10-30 16:05:07 INFO     [agents.tools.read_file_structure:77] [File Structure Tool] Found directory /Users/imilev/StartUp/hb-coding-agent/src/agent
+2025-10-30 16:05:07 INFO     [agents.tools.read_file_structure:86] [File Structure Tool] Found directory /Users/imilev/StartUp/hb-coding-agent/src/agent
+2025-10-30 16:05:07 INFO     [agents.tools.read_file_structure:95] [File Structure Tool] Reading file structure for /Users/imilev/StartUp/hb-coding-agent/src/agent
+2025-10-30 16:05:17 INFO     [agents.tools.read_file_structure:77] [File Structure Tool] Found directory /Users/imilev/StartUp/hb-coding-agent/src/tools
+2025-10-30 16:05:17 INFO     [agents.tools.read_file_structure:86] [File Structure Tool] Found directory /Users/imilev/StartUp/hb-coding-agent/src/tools
+2025-10-30 16:05:17 INFO     [agents.tools.read_file_structure:95] [File Structure Tool] Reading file structure for /Users/imilev/StartUp/hb-coding-agent/src/tools
+2025-10-30 16:05:27 INFO     [agents.tools.read_file_structure:77] [File Structure Tool] Found directory /Users/imilev/StartUp/hb-coding-agent/src/tools
+2025-10-30 16:05:27 INFO     [agents.tools.read_file_structure:86] [File Structure Tool] Found directory /Users/imilev/StartUp/hb-coding-agent/src/tools
+2025-10-30 16:05:27 INFO     [agents.tools.read_file_structure:95] [File Structure Tool] Reading file structure for /Users/imilev/StartUp/hb-coding-agent/src/tools
+2025-10-30 16:05:30 INFO     [agents.tools.read_source:46] [Source Reference Tool] Reading source code for src.tools.file_tools
+2025-10-30 16:05:30 WARNING  [agents.tools.read_source:70] [Source Reference Tool] File not found for src.tools.file_tools in Python. Make use of the `readFile` tool to read the file content directly.
+2025-10-30 16:05:34 INFO     [agents.tools.read_file:49] [ReadFile Tool] Reading file src/tools/file_tools.py around line 1
+2025-10-30 16:05:34 INFO     [agents.tools.read_file:100] [ReadFile Tool] Successfully read 110 lines from src/tools/file_tools.py 
+2025-10-30 16:05:42 INFO     [agents.tools.read_file_structure:77] [File Structure Tool] Found directory /Users/imilev/StartUp/hb-coding-agent/src/tools
+2025-10-30 16:05:42 INFO     [agents.tools.read_file_structure:86] [File Structure Tool] Found directory /Users/imilev/StartUp/hb-coding-agent/src/tools
+2025-10-30 16:05:42 INFO     [agents.tools.read_file_structure:95] [File Structure Tool] Reading file structure for /Users/imilev/StartUp/hb-coding-agent/src/tools
+2025-10-30 16:05:52 INFO     [agents.tools.read_file_structure:77] [File Structure Tool] Found directory /Users/imilev/StartUp/hb-coding-agent/src
+2025-10-30 16:05:52 INFO     [agents.tools.read_file_structure:86] [File Structure Tool] Found directory /Users/imilev/StartUp/hb-coding-agent/src
+2025-10-30 16:05:52 INFO     [agents.tools.read_file_structure:95] [File Structure Tool] Reading file structure for /Users/imilev/StartUp/hb-coding-agent/src
+2025-10-30 16:05:55 INFO     [agents.tools.read_file:49] [ReadFile Tool] Reading file src/config.py around line 1
+2025-10-30 16:05:55 INFO     [agents.tools.read_file:100] [ReadFile Tool] Successfully read 23 lines from src/config.py 
+2025-10-30 16:05:59 INFO     [diagram_analysis.diagram_generator:130] Found 4 components to analyze at level 0
+2025-10-30 16:05:59 INFO     [agents.abstraction_agent:120] [AbstractionAgent] Classifying files for project: hb-coding-agent
+2025-10-30 16:06:19 WARNING  [langchain_google_genai._function_utils:102] Key '$defs' is not supported in schema, ignoring
+2025-10-30 16:06:28 INFO     [diagram_analysis.diagram_generator:176] Analysis complete. Generated 1 analysis files
+2025-10-30 16:06:52 WARNING  [utils:47] STATIC_ANALYSIS_CONFIG environment variable is not set, using default VSCode Setup.
+2025-10-30 16:06:52 WARNING  [utils:47] STATIC_ANALYSIS_CONFIG environment variable is not set, using default VSCode Setup.
+2025-10-30 16:06:52 INFO     [static_analyzer.scanner:60] Found: ProgrammingLanguage(language=Python, size=1578, percentage=100.0, suffixes=['.py', '.pyi'])
+2025-10-30 16:06:52 INFO     [static_analyzer.scanner:63] Added ProgrammingLanguage(language=Python, size=1578, percentage=100.0, suffixes=['.py', '.pyi'])
+2025-10-30 16:06:52 INFO     [static_analyzer:54] Starting static analysis for Python in /Users/imilev/StartUp/hb-coding-agent
+2025-10-30 16:06:52 INFO     [static_analyzer.lsp_client.client:69] Starting server /Users/imilev/.vscode/extensions/codeboarding.codeboarding-0.2.10/bin/macos/py-lsp --stdio...
+2025-10-30 16:06:52 INFO     [static_analyzer.lsp_client.client:155] Initializing connection for python...
+2025-10-30 16:06:53 INFO     [static_analyzer.lsp_client.client:179] Initialization successful.
+2025-10-30 16:06:53 INFO     [static_analyzer.lsp_client.client:339] Starting unified static analysis with multithreading...
+2025-10-30 16:06:53 INFO     [static_analyzer.lsp_client.client:362] Found 17 source files. Starting unified analysis...
+2025-10-30 16:06:53 INFO     [static_analyzer.lsp_client.client:369] Found 0 classes in workspace
+2025-10-30 16:06:53 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/config.py with ID 3
+2025-10-30 16:06:53 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/__init__.py with ID 4
+2025-10-30 16:06:53 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/main.py with ID 5
+2025-10-30 16:06:53 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/tools/git_tools.py with ID 6
+2025-10-30 16:06:53 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/tools/lint_tools.py with ID 7
+2025-10-30 16:06:53 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/tools/file_tools.py with ID 8
+2025-10-30 16:06:53 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/tools/__init__.py with ID 9
+2025-10-30 16:06:53 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/tools/bash_tools.py with ID 10
+2025-10-30 16:06:53 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/tools/search_tools.py with ID 11
+2025-10-30 16:06:53 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/agent/react_agent.py with ID 12
+2025-10-30 16:06:53 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/agent/extractors.py with ID 13
+2025-10-30 16:06:53 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/agent/models.py with ID 14
+2025-10-30 16:06:53 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/agent/__init__.py with ID 15
+2025-10-30 16:06:53 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/agent/validator_agent.py with ID 17
+2025-10-30 16:06:53 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/agent/planning_agent.py with ID 22
+2025-10-30 16:06:53 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/agent/orchestrator.py with ID 25
+2025-10-30 16:06:53 INFO     [static_analyzer.lsp_client.client:186] Requesting document symbols for file:///Users/imilev/StartUp/hb-coding-agent/src/agent/implementation_agent.py with ID 204
+2025-10-30 16:06:56 INFO     [static_analyzer.lsp_client.client:396] Successfully processed 17 files
+2025-10-30 16:06:56 INFO     [static_analyzer.lsp_client.client:445] Unified static analysis complete.
+2025-10-30 16:06:56 INFO     [static_analyzer.lsp_client.client:446] Results: 306 references, 8 classes, 4 packages, 267 call graph nodes, 16 edges
+2025-10-30 16:06:56 INFO     [agents.meta_agent:31] [MetaAgent] Analyzing metadata for project: hb-coding-agent
+2025-10-30 16:06:58 INFO     [agents.tools.read_docs:82] [ReadDocs Tool] Reading file /Users/imilev/StartUp/hb-coding-agent/README.md around line 0
+2025-10-30 16:07:02 INFO     [agents.tools.external_deps:61] [ExternalDeps Tool] Searching for dependency files
+2025-10-30 16:07:02 INFO     [agents.tools.external_deps:92] [ExternalDeps Tool] Found 1 dependency file(s): requirements.txt
+2025-10-30 16:07:08 INFO     [agents.tools.read_docs:82] [ReadDocs Tool] Reading file /Users/imilev/StartUp/hb-coding-agent/requirements.txt around line 0
+2025-10-30 16:07:35 INFO     [agents.meta_agent:36] [MetaAgent] Completed metadata analysis for project: # 🎯 Project Metadata Analysis
+
+**Project Type:** AI Assistant / Coding Agent (specialized CLI tool)
+**Domain:** Artificial Intelligence/Machine Learning, Natural Language Processing (NLP), Code Generation and Validation.
+**Technology Stack:** Python 3.12, LangChain, LangGraph, Google Gemini (via `langchain-google-genai`, `google-ai-generativelanguage`), Pylint, uv, `python-dotenv`
+**Architectural Patterns:** Agentic Architecture (ReACT), Pipeline/Chain of Responsibility, Command Pattern, Memory Pattern
+**Expected Components:** Agent Orchestrator, LLM Interface, Tool/Action Modules, Conversation Memory, User Interface/Input-Output Handler, Configuration Manager
+**Architectural Bias:** Agent-centric design: Components should be organized around the agent's core functions: perceiving user input, reasoning with the LLM, and executing actions. Modular Tools: Emphasize the clear separation and encapsulation of each action (e.g., file operations, code validation) as distinct, reusable tools that the agent can invoke. Clear LLM interaction boundaries: The interface with the Large Language Model should be well-defined, distinguishing between prompt engineering, LLM invocation, and response interpretation. State management: Highlight how conversation memory is managed, persisted (for the session), and accessed by the agent to maintain context. Extensibility: The architecture should support easy addition of new tools or capabilities for the agent. Focus on flow: Architectural diagrams should clearly illustrate the flow of control and data through the agent's reasoning and action cycles, showing how user input leads to LLM interaction, tool selection, and output generation.
+
+2025-10-30 16:07:39 INFO     [__main__:57] Updating analysis for component: Agent Orchestrator
+2025-10-30 16:07:39 INFO     [agents.diff_analyzer:119] [DiffAnalyzingAgent] Component Agent Orchestrator does not exist, running full analysis
+2025-10-30 16:07:39 INFO     [agents.details_agent:109] Processing component: Agent Orchestrator
+2025-10-30 16:07:39 INFO     [agents.details_agent:45] [DetailsAgent] Analyzing details on subcfg for Agent Orchestrator
+2025-10-30 16:07:39 INFO     [agents.tools.read_cfg:50] [CFG Tool] Filtering CFG for component Agent Orchestrator in Python
+2025-10-30 16:07:39 INFO     [static_analyzer.graph:177] [CFG Tool] LLM string: 1392 characters, size limit: 2500000 characters
+2025-10-30 16:07:39 INFO     [agents.tools.read_cfg:61] [CFG Tool] Filtering CFG for component Agent Orchestrator, items found: 0
+2025-10-30 16:07:39 INFO     [agents.details_agent:50] [DetailsAgent] Analyzing details on cfg for Agent Orchestrator
+2025-10-30 16:08:13 WARNING  [langchain_google_genai._function_utils:102] Key '$defs' is not supported in schema, ignoring
+2025-10-30 16:08:25 INFO     [agents.details_agent:66] [DetailsAgent] Analyzing details on structure for Agent Orchestrator
+2025-10-30 16:08:31 INFO     [agents.tools.read_file_structure:77] [File Structure Tool] Found directory /Users/imilev/StartUp/hb-coding-agent/src/agent
+2025-10-30 16:08:31 INFO     [agents.tools.read_file_structure:86] [File Structure Tool] Found directory /Users/imilev/StartUp/hb-coding-agent/src/agent
+2025-10-30 16:08:31 INFO     [agents.tools.read_file_structure:95] [File Structure Tool] Reading file structure for /Users/imilev/StartUp/hb-coding-agent/src/agent
+2025-10-30 16:08:33 INFO     [agents.tools.read_file:49] [ReadFile Tool] Reading file src/agent/orchestrator.py around line 1
+2025-10-30 16:08:33 INFO     [agents.tools.read_file:100] [ReadFile Tool] Successfully read 300 lines from src/agent/orchestrator.py 
+2025-10-30 16:09:10 ERROR    [agents.agent:105] Empty response for prompt: Validate component analysis for **Component:** `Agent Orchestrator`
+   - *Description*: The core intelligence, interpreting user requests, orchestrating reasoning, and coordinating interactions.
+   - *Related Classes/Methods*: `QName:`src.agent.orchestrator` FileRef: `src/agent/orchestrator.py`` in `hb-coding-agent`.
+
+Project Context:
+# 🎯 Project Metadata Analysis
+
+**Project Type:** AI Assistant / Coding Agent (specialized CLI tool)
+**Domain:** Artificial Intelligence/Machine Learning, Natural Language Processing (NLP), Code Generation and Validation.
+**Technology Stack:** Python 3.12, LangChain, LangGraph, Google Gemini (via `langchain-google-genai`, `google-ai-generativelanguage`), Pylint, uv, `python-dotenv`
+**Architectural Patterns:** Agentic Architecture (ReACT), Pipeline/Chain of Responsibility, Command Pattern, Memory Pattern
+**Expected Components:** Agent Orchestrator, LLM Interface, Tool/Action Modules, Conversation Memory, User Interface/Input-Output Handler, Configuration Manager
+**Architectural Bias:** Agent-centric design: Components should be organized around the agent's core functions: perceiving user input, reasoning with the LLM, and executing actions. Modular Tools: Emphasize the clear separation and encapsulation of each action (e.g., file operations, code validation) as distinct, reusable tools that the agent can invoke. Clear LLM interaction boundaries: The interface with the Large Language Model should be well-defined, distinguishing between prompt engineering, LLM invocation, and response interpretation. State management: Highlight how conversation memory is managed, persisted (for the session), and accessed by the agent to maintain context. Extensibility: The architecture should support easy addition of new tools or capabilities for the agent. Focus on flow: Architectural diagrams should clearly illustrate the flow of control and data through the agent's reasoning and action cycles, showing how user input leads to LLM interaction, tool selection, and output generation.
+
+
+Current insights:
+# 📦 Abstract Components Overview from CFG
+**Component:** `Agent Orchestrator`
+   - *Description*: Acts as the central brain of the agent. It interprets user input, manages the agent's reasoning process (ReACT pattern), decides which tools to invoke, interacts with the LLM, and formulates the final response. It orchestrates the entire workflow.
+**Component:** `LLM Interface`
+   - *Description*: Provides a standardized interface for all interactions with the Large Language Model (Google Gemini). This includes prompt engineering, handling API calls, managing model parameters, and parsing raw LLM outputs into a usable format for the orchestrator.
+**Component:** `Tool/Action Modules`
+   - *Description*: Encapsulates specific, discrete functionalities or actions the coding agent can perform. Examples include file system operations (read/write), code validation (e.g., using Pylint), code generation, and testing. Each module is designed to be independent and reusable.
+**Component:** `Conversation Memory`
+   - *Description*: Stores and manages the historical context of the conversation. This allows the agent to maintain state across multiple turns, providing a coherent and context-aware interaction experience.
+**Component:** `User Interface/Input-Output Handler`
+   - *Description*: Manages the interaction with the user, specifically for a CLI tool. It handles receiving user commands/queries from the command line and displaying the agent's responses, progress, and any relevant output back to the user.
+**Component:** `Configuration Manager`
+   - *Description*: Responsible for loading, storing, and providing access to various configuration settings required by the agent, such as API keys, model endpoints, default paths, and other operational parameters.(User Interface/Input-Output Handler, passes user commands/queries to, Agent Orchestrator)
+(Agent Orchestrator, sends responses and status updates back to, User Interface/Input-Output Handler)
+(Agent Orchestrator, sends structured prompts to, LLM Interface)
+(LLM Interface, returns the LLM's generated responses to, Agent Orchestrator)
+(Agent Orchestrator, dynamically selects and invokes, Tool/Action Modules)
+(Tool/Action Modules, return results to, Agent Orchestrator)
+(Agent Orchestrator, stores new conversational turns and retrieves past conversation history from, Conversation Memory)
+(Agent Orchestrator, queries to retrieve necessary settings and parameters from, Configuration Manager)
+(LLM Interface, retrieves API keys, model names, and other LLM-specific settings from, Configuration Manager)
+
+Instructions:
+1. Review existing insights first
+2. Use getPackageDependencies only if package relationships are unclear
+
+Required outputs:
+- Validated component abstractions from existing insights
+- Refinements based on AI Assistant / Coding Agent (specialized CLI tool) patterns
+- Confirmed component source files and relationships
+
+Work primarily with provided insights.
+2025-10-30 16:09:10 WARNING  [langchain_google_genai._function_utils:102] Key '$defs' is not supported in schema, ignoring
+2025-10-30 16:09:17 INFO     [agents.details_agent:82] [DetailsAgent] Generating details documentation
+2025-10-30 16:10:01 WARNING  [langchain_google_genai._function_utils:102] Key '$defs' is not supported in schema, ignoring
+2025-10-30 16:10:21 INFO     [static_analyzer.reference_resolve_mixin:26] Fixing source code reference lines for the analysis: # 📦 Abstract Components Overview
+**Component:** `Agent Orchestrator`
+   - *Description*: The core intelligence of the agent. It interprets user requests, orchestrates the reasoning process, selects appropriate tools, and coordinates interactions between other components. It drives the overall agentic workflow.
+   - *Related Classes/Methods*: `QName:`src/agent/orchestrator.py` FileRef: `src/agent/orchestrator.py``
+**Component:** `User Interface/Input-Output Handler`
+   - *Description*: Manages all interactions with the user, receiving input commands and displaying the agent's responses. It acts as the primary interface for the CLI tool.
+   - *Related Classes/Methods*: `QName:`src/ui/cli_handler.py` FileRef: `src/ui/cli_handler.py``
+**Component:** `Conversation Memory`
+   - *Description*: Stores and retrieves the history of the conversation, providing context to the `Agent Orchestrator` for informed decision-making and coherent responses across turns.
+   - *Related Classes/Methods*: `QName:`src/memory/session_memory.py` FileRef: `src/memory/session_memory.py``
+**Component:** `LLM Interface`
+   - *Description*: Handles all communication with the Large Language Model, including prompt construction, sending requests, and parsing the LLM's output. It abstracts the specifics of the LLM provider.
+   - *Related Classes/Methods*: `QName:`src/llm/gemini_interface.py` FileRef: `src/llm/gemini_interface.py``
+**Component:** `Tool/Action Modules`
+   - *Description*: A collection of specialized modules that encapsulate specific functionalities or actions the agent can execute (e.g., file operations, code analysis, external API calls). The `Agent Orchestrator` selects and invokes these tools.
+   - *Related Classes/Methods*: `QName:`src/tools/file_manager.py` FileRef: `src/tools/file_manager.py``, `QName:`src/tools/code_validator.py` FileRef: `src/tools/code_validator.py``
+**Component:** `Configuration Manager`
+   - *Description*: Provides a centralized mechanism for loading and accessing application-wide settings, API keys, and environmental variables, ensuring components operate with correct parameters.
+   - *Related Classes/Methods*: `QName:`src/config/settings.py` FileRef: `src/config/settings.py``(User Interface/Input-Output Handler, sends requests to, Agent Orchestrator)
+(Agent Orchestrator, orchestrates, LLM Interface)
+(Agent Orchestrator, selects and invokes, Tool/Action Modules)
+(Agent Orchestrator, manages context with, Conversation Memory)
+(Agent Orchestrator, receives settings from, Configuration Manager)
+(LLM Interface, uses, Configuration Manager)
+(Tool/Action Modules, uses, Configuration Manager)
+(Agent Orchestrator, sends output to, User Interface/Input-Output Handler)
+2025-10-30 16:10:21 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for src/agent/orchestrator.py in Python: Source code reference for 'src.agent.orchestrator.py' in language 'Python' not found in results.
+2025-10-30 16:10:21 INFO     [static_analyzer.reference_resolve_mixin:103] [Reference Resolution] File path matched for src/agent/orchestrator.py in Python at /Users/imilev/StartUp/hb-coding-agent/src/agent/orchestrator.py
+2025-10-30 16:10:21 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for src/ui/cli_handler.py in Python: Source code reference for 'src.ui.cli_handler.py' in language 'Python' not found in results.
+2025-10-30 16:10:26 INFO     [static_analyzer.reference_resolve_mixin:132] [Reference Resolution] LLM matched src/ui/cli_handler.py at src/ui/cli_handler.py
+2025-10-30 16:10:26 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for src/memory/session_memory.py in Python: Source code reference for 'src.memory.session_memory.py' in language 'Python' not found in results.
+2025-10-30 16:10:31 INFO     [static_analyzer.reference_resolve_mixin:132] [Reference Resolution] LLM matched src/memory/session_memory.py at src/memory/session_memory.py
+2025-10-30 16:10:31 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for src/llm/gemini_interface.py in Python: Source code reference for 'src.llm.gemini_interface.py' in language 'Python' not found in results.
+2025-10-30 16:10:36 INFO     [static_analyzer.reference_resolve_mixin:132] [Reference Resolution] LLM matched src/llm/gemini_interface.py at src/llm/gemini_interface.py
+2025-10-30 16:10:36 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for src/tools/file_manager.py in Python: Source code reference for 'src.tools.file_manager.py' in language 'Python' not found in results.
+2025-10-30 16:10:40 INFO     [static_analyzer.reference_resolve_mixin:132] [Reference Resolution] LLM matched src/tools/file_manager.py at src/tools/file_manager.py
+2025-10-30 16:10:40 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for src/tools/code_validator.py in Python: Source code reference for 'src.tools.code_validator.py' in language 'Python' not found in results.
+2025-10-30 16:10:43 INFO     [static_analyzer.reference_resolve_mixin:132] [Reference Resolution] LLM matched src/tools/code_validator.py at src/tools/code_validator.py
+2025-10-30 16:10:43 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for src/config/settings.py in Python: Source code reference for 'src.config.settings.py' in language 'Python' not found in results.
+2025-10-30 16:10:46 INFO     [static_analyzer.reference_resolve_mixin:132] [Reference Resolution] LLM matched src/config/settings.py at src/config/settings.py
+2025-10-30 16:10:46 INFO     [agents.validator_agent:121] [ValidatorAgent] Running validation on the analysis.
+2025-10-30 16:11:29 INFO     [agents.validator_agent:140] [ValidatorAgent] Validation result: [Valid: False] with insights: **Feedback Information:**
+1. Clarity and Necessity: All relationships are clearly defined and appear necessary for the described system architecture. The descriptions of how components interact align with their stated responsibilities.
+2. Logical Consistency: The direction and nature of each relationship are logically consistent with the roles of the involved components. For example, the `User Interface/Input-Output Handler` sending requests to the `Agent Orchestrator` and the `Agent Orchestrator` sending output back to the `User Interface/Input-Output Handler` forms a coherent interaction loop.
+3. Violation of "Max 1 relationship per component pair": The analysis explicitly states "Verify max 1 relationship per component pair." However, there are two distinct relationships defined for the pair `User Interface/Input-Output Handler` and `Agent Orchestrator`:
+    *   `(User Interface/Input-Output Handler, sends requests to, Agent Orchestrator)`
+    *   `(Agent Orchestrator, sends output to, User Interface/Input-Output Handler)`
+    While these represent different aspects of interaction (input vs. output), they both involve the same pair of components. To adhere strictly to the "max 1 relationship per component pair" rule, these would ideally be consolidated into a single, possibly bidirectional, relationship or a more generalized interaction description for that specific pair.
+
+**Feedback Information:**
+Component Agent Orchestrator has an incorrect reference: 'QName:`src/agent/orchestrator.py` FileRef: `src/agent/orchestrator.py`'. Expected: '/Users/imilev/StartUp/hb-coding-agent/src/agent/orchestrator.py', but found: 'src/agent/orchestrator.py'. Apply the correct reference please, maybe it is a full file reference, then validate with `readFile` tool.
+Component Agent Orchestrator has src/agent/orchestrator.py as an incorrect reference: 'QName:`src/agent/orchestrator.py` FileRef: `src/agent/orchestrator.py`'. src/agent/orchestrator.py is INCORRECT reference, there is no such module or function/class/method in the project. Please reconsider by using `getSourceCode` tool to find the correct reference or validate with `readFile` tool if it is a file reference.
+Component User Interface/Input-Output Handler has src/ui/cli_handler.py as an incorrect reference: 'QName:`src/ui/cli_handler.py` FileRef: `src/ui/cli_handler.py`'. src/ui/cli_handler.py is INCORRECT reference, there is no such module or function/class/method in the project. Please reconsider by using `getSourceCode` tool to find the correct reference or validate with `readFile` tool if it is a file reference.
+Component Conversation Memory has src/memory/session_memory.py as an incorrect reference: 'QName:`src/memory/session_memory.py` FileRef: `src/memory/session_memory.py`'. src/memory/session_memory.py is INCORRECT reference, there is no such module or function/class/method in the project. Please reconsider by using `getSourceCode` tool to find the correct reference or validate with `readFile` tool if it is a file reference.
+Component LLM Interface has src/llm/gemini_interface.py as an incorrect reference: 'QName:`src/llm/gemini_interface.py` FileRef: `src/llm/gemini_interface.py`'. src/llm/gemini_interface.py is INCORRECT reference, there is no such module or function/class/method in the project. Please reconsider by using `getSourceCode` tool to find the correct reference or validate with `readFile` tool if it is a file reference.
+Component Tool/Action Modules has src/tools/file_manager.py as an incorrect reference: 'QName:`src/tools/file_manager.py` FileRef: `src/tools/file_manager.py`'. src/tools/file_manager.py is INCORRECT reference, there is no such module or function/class/method in the project. Please reconsider by using `getSourceCode` tool to find the correct reference or validate with `readFile` tool if it is a file reference.
+Component Tool/Action Modules has src/tools/code_validator.py as an incorrect reference: 'QName:`src/tools/code_validator.py` FileRef: `src/tools/code_validator.py`'. src/tools/code_validator.py is INCORRECT reference, there is no such module or function/class/method in the project. Please reconsider by using `getSourceCode` tool to find the correct reference or validate with `readFile` tool if it is a file reference.
+Component Configuration Manager has src/config/settings.py as an incorrect reference: 'QName:`src/config/settings.py` FileRef: `src/config/settings.py`'. src/config/settings.py is INCORRECT reference, there is no such module or function/class/method in the project. Please reconsider by using `getSourceCode` tool to find the correct reference or validate with `readFile` tool if it is a file reference.
+
+
+2025-10-30 16:11:29 INFO     [agents.details_agent:99] [DetailsAgent] Applying feedback to analysis for project: hb-coding-agent
+2025-10-30 16:11:42 INFO     [agents.tools.read_file:49] [ReadFile Tool] Reading file src/agent/orchestrator.py around line 1
+2025-10-30 16:11:42 INFO     [agents.tools.read_file:49] [ReadFile Tool] Reading file src/ui/cli_handler.py around line 1
+2025-10-30 16:11:42 INFO     [agents.tools.read_file:49] [ReadFile Tool] Reading file src/memory/session_memory.py around line 1
+2025-10-30 16:11:42 INFO     [agents.tools.read_file:49] [ReadFile Tool] Reading file src/llm/gemini_interface.py around line 1
+2025-10-30 16:11:42 INFO     [agents.tools.read_file:49] [ReadFile Tool] Reading file src/tools/file_manager.py around line 1
+2025-10-30 16:11:42 INFO     [agents.tools.read_file:49] [ReadFile Tool] Reading file src/tools/code_validator.py around line 1
+2025-10-30 16:11:42 INFO     [agents.tools.read_file:49] [ReadFile Tool] Reading file src/config/settings.py around line 1
+2025-10-30 16:11:42 ERROR    [agents.tools.read_file:63] [ReadFile Tool] File src/ui/cli_handler.py not found in cached files.
+2025-10-30 16:11:42 INFO     [agents.tools.read_file:100] [ReadFile Tool] Successfully read 300 lines from src/agent/orchestrator.py 
+2025-10-30 16:11:42 ERROR    [agents.tools.read_file:63] [ReadFile Tool] File src/memory/session_memory.py not found in cached files.
+2025-10-30 16:11:42 ERROR    [agents.tools.read_file:63] [ReadFile Tool] File src/llm/gemini_interface.py not found in cached files.
+2025-10-30 16:11:42 ERROR    [agents.tools.read_file:63] [ReadFile Tool] File src/tools/file_manager.py not found in cached files.
+2025-10-30 16:11:42 ERROR    [agents.tools.read_file:63] [ReadFile Tool] File src/tools/code_validator.py not found in cached files.
+2025-10-30 16:11:42 ERROR    [agents.tools.read_file:63] [ReadFile Tool] File src/config/settings.py not found in cached files.
+2025-10-30 16:11:53 WARNING  [langchain_google_genai._function_utils:102] Key '$defs' is not supported in schema, ignoring
+2025-10-30 16:12:07 INFO     [static_analyzer.reference_resolve_mixin:26] Fixing source code reference lines for the analysis: # 📦 Abstract Components Overview
+**Component:** `Agent Orchestrator`
+   - *Description*: The core intelligence of the agent. It interprets user requests, orchestrates the reasoning process, selects appropriate tools, and coordinates interactions between other components. It drives the overall agentic workflow.
+   - *Related Classes/Methods*: `QName:`src.agent.orchestrator` FileRef: `src/agent/orchestrator.py``
+**Component:** `User Interface/Input-Output Handler`
+   - *Description*: Manages all interactions with the user, receiving input commands and displaying the agent's responses. It acts as the primary interface for the CLI tool.
+   - *Related Classes/Methods*: `QName:`src.main` FileRef: `src/main.py``
+**Component:** `LLM Interface`
+   - *Description*: Handles all communication with the Large Language Model, including prompt construction, sending requests, and parsing the LLM's output. It abstracts the specifics of the LLM provider.
+   - *Related Classes/Methods*: `QName:`langchain_google_genai.chat_models` FileRef: `langchain_google_genai/chat_models.py``
+**Component:** `Tool/Action Modules`
+   - *Description*: A collection of specialized modules that encapsulate specific functionalities or actions the agent can execute (e.g., file operations, code analysis, external API calls). The `Agent Orchestrator` selects and invokes these tools.
+   - *Related Classes/Methods*: `QName:`src.tools.file_tools` FileRef: `src/tools/file_tools.py``, `QName:`src.tools.lint_tools` FileRef: `src/tools/lint_tools.py``, `QName:`src.tools.git_tools` FileRef: `src/tools/git_tools.py``, `QName:`src.tools.bash_tools` FileRef: `src/tools/bash_tools.py``, `QName:`src.tools.search_tools` FileRef: `src/tools/search_tools.py``
+**Component:** `Configuration Manager`
+   - *Description*: Provides a centralized mechanism for loading and accessing application-wide settings, API keys, and environmental variables, ensuring components operate with correct parameters.
+   - *Related Classes/Methods*: `QName:`src.config` FileRef: `src/config.py``(User Interface/Input-Output Handler, interacts with, Agent Orchestrator)
+(Agent Orchestrator, utilizes, LLM Interface)
+(Agent Orchestrator, invokes, Tool/Action Modules)
+(Agent Orchestrator, configures with, Configuration Manager)
+(LLM Interface, accesses, Configuration Manager)
+(Tool/Action Modules, accesses, Configuration Manager)
+2025-10-30 16:12:07 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for src.agent.orchestrator in Python: Source code reference for 'src.agent.orchestrator' in language 'Python' is a file path, please use the full file path instead of the qualified name.
+2025-10-30 16:12:07 INFO     [static_analyzer.reference_resolve_mixin:103] [Reference Resolution] File path matched for src.agent.orchestrator in Python at /Users/imilev/StartUp/hb-coding-agent/src/agent/orchestrator.py
+2025-10-30 16:12:07 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for src.main in Python: Source code reference for 'src.main' in language 'Python' is a file path, please use the full file path instead of the qualified name.
+2025-10-30 16:12:07 INFO     [static_analyzer.reference_resolve_mixin:103] [Reference Resolution] File path matched for src.main in Python at /Users/imilev/StartUp/hb-coding-agent/src/main.py
+2025-10-30 16:12:07 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for langchain_google_genai.chat_models in Python: Source code reference for 'langchain_google_genai.chat_models' in language 'Python' not found in results.
+2025-10-30 16:12:20 INFO     [static_analyzer.reference_resolve_mixin:132] [Reference Resolution] LLM matched langchain_google_genai.chat_models at <file_path>
+2025-10-30 16:12:20 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for src.tools.file_tools in Python: Source code reference for 'src.tools.file_tools' in language 'Python' is a file path, please use the full file path instead of the qualified name.
+2025-10-30 16:12:20 INFO     [static_analyzer.reference_resolve_mixin:103] [Reference Resolution] File path matched for src.tools.file_tools in Python at /Users/imilev/StartUp/hb-coding-agent/src/tools/file_tools.py
+2025-10-30 16:12:20 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for src.tools.lint_tools in Python: Source code reference for 'src.tools.lint_tools' in language 'Python' is a file path, please use the full file path instead of the qualified name.
+2025-10-30 16:12:20 INFO     [static_analyzer.reference_resolve_mixin:103] [Reference Resolution] File path matched for src.tools.lint_tools in Python at /Users/imilev/StartUp/hb-coding-agent/src/tools/lint_tools.py
+2025-10-30 16:12:20 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for src.tools.git_tools in Python: Source code reference for 'src.tools.git_tools' in language 'Python' is a file path, please use the full file path instead of the qualified name.
+2025-10-30 16:12:20 INFO     [static_analyzer.reference_resolve_mixin:103] [Reference Resolution] File path matched for src.tools.git_tools in Python at /Users/imilev/StartUp/hb-coding-agent/src/tools/git_tools.py
+2025-10-30 16:12:20 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for src.tools.bash_tools in Python: Source code reference for 'src.tools.bash_tools' in language 'Python' is a file path, please use the full file path instead of the qualified name.
+2025-10-30 16:12:20 INFO     [static_analyzer.reference_resolve_mixin:103] [Reference Resolution] File path matched for src.tools.bash_tools in Python at /Users/imilev/StartUp/hb-coding-agent/src/tools/bash_tools.py
+2025-10-30 16:12:20 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for src.tools.search_tools in Python: Source code reference for 'src.tools.search_tools' in language 'Python' is a file path, please use the full file path instead of the qualified name.
+2025-10-30 16:12:20 INFO     [static_analyzer.reference_resolve_mixin:103] [Reference Resolution] File path matched for src.tools.search_tools in Python at /Users/imilev/StartUp/hb-coding-agent/src/tools/search_tools.py
+2025-10-30 16:12:20 WARNING  [static_analyzer.reference_resolve_mixin:68] [Reference Resolution] Exact match failed for src.config in Python: Source code reference for 'src.config' in language 'Python' is a file path, please use the full file path instead of the qualified name.
+2025-10-30 16:12:20 INFO     [static_analyzer.reference_resolve_mixin:103] [Reference Resolution] File path matched for src.config in Python at /Users/imilev/StartUp/hb-coding-agent/src/config.py
+2025-10-30 16:12:22 INFO     [agents.tools.read_file_structure:77] [File Structure Tool] Found directory /Users/imilev/StartUp/hb-coding-agent/src/agent
+2025-10-30 16:12:22 INFO     [agents.tools.read_file_structure:86] [File Structure Tool] Found directory /Users/imilev/StartUp/hb-coding-agent/src/agent
+2025-10-30 16:12:22 INFO     [agents.tools.read_file_structure:95] [File Structure Tool] Reading file structure for /Users/imilev/StartUp/hb-coding-agent/src/agent
+2025-10-30 16:12:32 INFO     [agents.tools.read_file_structure:77] [File Structure Tool] Found directory /Users/imilev/StartUp/hb-coding-agent/src
+2025-10-30 16:12:32 INFO     [agents.tools.read_file_structure:86] [File Structure Tool] Found directory /Users/imilev/StartUp/hb-coding-agent/src
+2025-10-30 16:12:32 INFO     [agents.tools.read_file_structure:95] [File Structure Tool] Reading file structure for /Users/imilev/StartUp/hb-coding-agent/src
+2025-10-30 16:13:05 INFO     [agents.tools.read_file_structure:77] [File Structure Tool] Found directory /Users/imilev/StartUp/hb-coding-agent/src/tools
+2025-10-30 16:13:05 INFO     [agents.tools.read_file_structure:86] [File Structure Tool] Found directory /Users/imilev/StartUp/hb-coding-agent/src/tools
+2025-10-30 16:13:05 INFO     [agents.tools.read_file_structure:95] [File Structure Tool] Reading file structure for /Users/imilev/StartUp/hb-coding-agent/src/tools
+2025-10-30 16:13:21 INFO     [agents.tools.read_file_structure:77] [File Structure Tool] Found directory /Users/imilev/StartUp/hb-coding-agent/src
+2025-10-30 16:13:21 INFO     [agents.tools.read_file_structure:86] [File Structure Tool] Found directory /Users/imilev/StartUp/hb-coding-agent/src
+2025-10-30 16:13:21 INFO     [agents.tools.read_file_structure:95] [File Structure Tool] Reading file structure for /Users/imilev/StartUp/hb-coding-agent/src
+2025-10-30 16:13:28 INFO     [agents.details_agent:121] [DetailsAgent] Classifying component Agent Orchestrator based on assigned files
+2025-10-30 16:13:37 WARNING  [langchain_google_genai._function_utils:102] Key '$defs' is not supported in schema, ignoring
