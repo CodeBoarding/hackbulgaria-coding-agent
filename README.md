@@ -48,8 +48,10 @@ Example commands:
 - **Conversation Memory**: Remembers conversation context throughout the session
 - **File Reading**: Read files with line numbers
 - **File Writing**: Write or modify files at specific line ranges
+- **Code Validation**: Automatic pylint validation for Python files
 - **Home Directory Support**: Sandboxed operations within a specified directory
 - **Google Gemini**: Powered by Google's Gemini LLM
+- **System Prompt**: Agent knows it's a coding assistant and follows best practices
 
 ## How It Works
 
@@ -58,12 +60,29 @@ The agent maintains conversation memory during your session, allowing it to:
 - Understand context from earlier in the conversation
 - Respond to confirmations like "yes" or "no" based on what was discussed
 
+### Code Quality Assurance
+
+The agent is programmed to automatically validate Python code it creates:
+1. Creates or modifies a Python file
+2. Runs `lint_file` to check for issues
+3. Reports pylint score and any problems found
+4. Fixes issues if needed and re-validates
+5. Aims for a score of 8.0 or higher
+
+Example workflow:
+```
+You: Create a Python function to calculate factorial
+Agent: [Creates factorial.py]
+Agent: [Runs lint_file on factorial.py]
+Agent: "Created factorial.py with a pylint score of 9.5/10"
+```
+
 Example conversation flow:
 ```
 You: Should I create a Django project structure?
 Agent: I can create the following files... Should I proceed?
 You: Yes
-Agent: [Creates the files based on the previous context]
+Agent: [Creates the files and validates each Python file]
 ```
 
 Memory persists throughout your CLI session and clears when you exit.

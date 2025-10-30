@@ -9,6 +9,48 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from src.agent.react_agent import create_coding_agent
 
+# System prompt for the coding agent
+SYSTEM_PROMPT = """You are an expert coding assistant specialized in Python development. Your role is to help users with their coding tasks by:
+
+1. **Reading and Writing Files**: You can read files to understand existing code and write new files or modify existing ones.
+
+2. **Code Quality**: Always validate Python code you create or modify using the lint_file tool. This ensures:
+   - No syntax errors (checked via AST parsing)
+   - No unused imports or variables
+   - Code follows Python best practices
+   - Proper code style and conventions
+
+3. **Best Practices**:
+   - After creating or modifying a Python file, ALWAYS run lint_file on it to check for issues
+   - The lint_file tool will first check for syntax errors using AST parsing
+   - If syntax errors are found, fix them immediately before continuing
+   - After syntax is valid, pylint will check for style and quality issues
+   - If linting reveals problems, fix them and lint again
+   - Aim for a pylint score of 8.0 or higher
+   - Explain any linting issues you find and how you fixed them
+
+4. **Workflow**:
+   - Understand the user's request
+   - Read relevant files if needed
+   - Create or modify files as requested
+   - Validate with lint_file (catches both syntax errors and style issues)
+   - Fix any issues found
+   - Re-validate to ensure fixes worked
+   - Report the final result with the pylint score
+
+5. **Communication**:
+   - Be clear and concise
+   - Explain your reasoning
+   - Ask for confirmation before making significant changes
+   - Report the results of your actions
+
+You have access to these tools:
+- read_file: Read contents of a file with line numbers
+- write_file: Create or modify files at specific line ranges
+- lint_file: Validate Python files (AST syntax check + pylint analysis)
+
+Always strive for clean, well-structured, and properly linted code."""
+
 
 def format_message_content(content):
     """Format message content for better readability.
@@ -65,6 +107,9 @@ def main():
     # Thread ID for maintaining conversation memory
     thread_id = "default_session"
     
+    # Flag to track if system prompt has been sent
+    system_prompt_sent = False
+    
     while True:
         try:
             # Get user input
@@ -78,17 +123,58 @@ def main():
                 continue
             
             # Run agent
-            print("\nAgent:")
-            result = agent.invoke(
-                {"messages": [("user", user_input)]},
+            print("\nAgent working...\n")
+            
+            # Include system prompt only on first message
+            if not system_prompt_sent:
+                messages = [("system", SYSTEM_PROMPT), ("user", user_input)]
+                system_prompt_sent = True
+            else:
+                messages = [("user", user_input)]
+            
+            # Stream the agent's execution to see tools in real-time
+            for chunk in agent.stream(
+                {"messages": messages},
+                config={"configurable": {"thread_id": thread_id}}
+            ):
+                # Display tool calls and results in real-time
+                if "agent" in chunk:
+                    for message in chunk["agent"]["messages"]:
+                        if hasattr(message, 'tool_calls') and message.tool_calls:
+                            for tool_call in message.tool_calls:
+                                tool_name = tool_call.get('name', 'unknown')
+                                tool_args = tool_call.get('args', {})
+                                print(f"🔧 Using tool: {tool_name}")
+                                if 'file_path' in tool_args:
+                                    print(f"   → File: {tool_args['file_path']}")
+                                print()
+                
+                if "tools" in chunk:
+                    for message in chunk["tools"]["messages"]:
+                        if hasattr(message, 'content'):
+                            # Show first 200 chars of tool output
+                            content_preview = str(message.content)[:200]
+                            if len(str(message.content)) > 200:
+                                content_preview += "..."
+                            print(f"✓ Tool result: {content_preview}\n")
+            
+            # Get final result to display
+            final_result = agent.invoke(
+                {"messages": messages},
                 config={"configurable": {"thread_id": thread_id}}
             )
             
-            # Display result
-            for message in result["messages"]:
+            # Display final agent response
+            print("\n" + "="*50)
+            print("Agent Response:")
+            print("="*50 + "\n")
+            for message in final_result["messages"]:
                 if hasattr(message, 'content') and message.content:
-                    formatted_output = format_message_content(message.content)
-                    print(f"{formatted_output}\n")
+                    # Only show AI messages (not tool calls)
+                    if hasattr(message, 'type') and message.type == 'ai':
+                        formatted_output = format_message_content(message.content)
+                        if formatted_output.strip():
+                            print(f"{formatted_output}\n")
             
         except KeyboardInterrupt:
             print("\n\nGoodbye!")

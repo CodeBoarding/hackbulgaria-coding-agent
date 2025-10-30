@@ -1,15 +1,15 @@
 {
-  "description": "The HackBulgaria Coding Agent operates through a clear, modular architecture designed for interactive problem-solving. The CLI Interface serves as the primary entry point, handling user input and command-line arguments, then initiating the core agent's operations. The AI Agent Core acts as the central orchestrator, employing a ReACT (Reasoning and Acting) pattern to interpret user requests, plan actions, and execute tasks. This core intelligence leverages the LLM Integration Module for all interactions with the Google Gemini Language Model, enabling advanced natural language understanding and generation. Additionally, the File System Tools component provides the agent with essential capabilities to interact with the local file system, allowing it to read, write, and manage project files as required by its tasks. This structured approach ensures a robust and extensible system for automated coding assistance.",
+  "description": "The `hb_coding_agent` operates through a clear, modular architecture. User commands are received via the **User Interface (CLI)**, which then initiates a request to the **Agent Core**. The `Agent Core` acts as the brain, processing user input and determining the necessary actions. For complex reasoning and code generation, it interacts with the **LLM Interface**, which abstracts the communication with the Google Gemini model. When external operations are required, the `Agent Core` consults the **Tool Registry** to discover and invoke specialized tools. These tools include the **File System Adapter** for interacting with the local file system and the **Code Quality Module** for performing static code analysis. All operational parameters and sensitive information are managed by the **Configuration Service**, which provides essential settings to the `Agent Core`, `LLM Interface`, and `Tool Registry`, ensuring secure and consistent application behavior. This design promotes clear separation of concerns, making the system maintainable and scalable.",
   "components": [
     {
-      "name": "CLI Interface",
-      "description": "Manages user interaction, parses command-line arguments, and serves as the entry point for the agent.",
+      "name": "User Interface (CLI)",
+      "description": "The primary interface for users to interact with the coding agent, handling command-line input and displaying outputs.",
       "referenced_source_code": [
         {
-          "qualified_name": "src.main.main",
+          "qualified_name": "src/main.py",
           "reference_file": "src/main.py",
-          "reference_start_line": 46,
-          "reference_end_line": 97
+          "reference_start_line": null,
+          "reference_end_line": null
         }
       ],
       "assigned_files": [
@@ -18,58 +18,61 @@
       "can_expand": false
     },
     {
-      "name": "AI Agent Core",
-      "description": "The central intelligence and orchestration component, responsible for reasoning, planning, and task execution using the ReACT pattern.",
+      "name": "Agent Core",
+      "description": "The central orchestrator of the ReACT loop, interpreting user requests, managing LLM interactions, and deciding on tool usage.",
       "referenced_source_code": [
         {
-          "qualified_name": "src.agent.react_agent.create_coding_agent",
+          "qualified_name": "src/agent/react_agent.py",
           "reference_file": "src/agent/react_agent.py",
-          "reference_start_line": 11,
-          "reference_end_line": 41
-        }
-      ],
-      "assigned_files": [
-        "src/agent/react_agent.py"
-      ],
-      "can_expand": true
-    },
-    {
-      "name": "LLM Integration Module",
-      "description": "Handles communication with the Google Gemini Language Model, managing API calls and responses.",
-      "referenced_source_code": [
-        {
-          "qualified_name": "langchain_google_genai.ChatGoogleGenerativeAI",
-          "reference_file": ".",
           "reference_start_line": null,
           "reference_end_line": null
-        },
-        {
-          "qualified_name": "src.config.get_google_api_key",
-          "reference_file": "src/config.py",
-          "reference_start_line": 13,
-          "reference_end_line": 18
         }
       ],
       "assigned_files": [
-        "src/config.py"
+        "src/agent/react_agent.py",
+        "src/agent/__init__.py"
       ],
       "can_expand": true
     },
     {
-      "name": "File System Tools",
-      "description": "Provides functionalities for interacting with the local file system, enabling the agent to read, write, and manage project files.",
+      "name": "LLM Interface",
+      "description": "Provides a standardized abstraction for interacting with the Google Gemini Large Language Model, managing prompt formatting and API communication.",
       "referenced_source_code": [
         {
-          "qualified_name": "src.tools.file_tools.read_file",
-          "reference_file": "src/tools/file_tools.py",
-          "reference_start_line": 29,
-          "reference_end_line": 54
-        },
+          "qualified_name": "langchain_google_genai.chat_models",
+          "reference_file": "",
+          "reference_start_line": null,
+          "reference_end_line": null
+        }
+      ],
+      "assigned_files": [],
+      "can_expand": true
+    },
+    {
+      "name": "Tool Registry",
+      "description": "Manages the registration, discovery, and invocation of all available tools, acting as a central hub for tool execution.",
+      "referenced_source_code": [
         {
-          "qualified_name": "src.tools.file_tools.write_file",
+          "qualified_name": "src/tools/__init__.py",
+          "reference_file": "src/tools/__init__.py",
+          "reference_start_line": null,
+          "reference_end_line": null
+        }
+      ],
+      "assigned_files": [
+        "src/tools/__init__.py"
+      ],
+      "can_expand": true
+    },
+    {
+      "name": "File System Adapter",
+      "description": "Provides a controlled and sandboxed interface for the agent to interact with the local file system, enabling read and write operations.",
+      "referenced_source_code": [
+        {
+          "qualified_name": "src/tools/file_tools.py",
           "reference_file": "src/tools/file_tools.py",
-          "reference_start_line": 57,
-          "reference_end_line": 104
+          "reference_start_line": null,
+          "reference_end_line": null
         }
       ],
       "assigned_files": [
@@ -78,32 +81,87 @@
       "can_expand": false
     },
     {
+      "name": "Code Quality Module",
+      "description": "Integrates static code analysis tools to evaluate the quality, style, and potential issues within code generated or modified by the agent.",
+      "referenced_source_code": [
+        {
+          "qualified_name": "src.tools.lint_tools.py",
+          "reference_file": "src/tools/lint_tools.py",
+          "reference_start_line": 50,
+          "reference_end_line": 50
+        }
+      ],
+      "assigned_files": [
+        "src/tools/lint_tools.py"
+      ],
+      "can_expand": false
+    },
+    {
+      "name": "Configuration Service",
+      "description": "Centralized management for application settings, environment variables, and sensitive credentials, ensuring consistent behavior across components.",
+      "referenced_source_code": [
+        {
+          "qualified_name": "src/config.py",
+          "reference_file": "src/config.py",
+          "reference_start_line": null,
+          "reference_end_line": null
+        }
+      ],
+      "assigned_files": [
+        "src/config.py"
+      ],
+      "can_expand": false
+    },
+    {
       "name": "Unclassified",
       "description": "Component for all unclassified files and utility functions (Utility functions/External Libraries/Dependencies)",
       "referenced_source_code": [],
       "assigned_files": [
-        "src/__init__.py",
-        "src/tools/__init__.py",
-        "src/agent/__init__.py"
+        "src/__init__.py"
       ],
       "can_expand": false
     }
   ],
   "components_relations": [
     {
-      "relation": "invokes",
-      "src_name": "CLI Interface",
-      "dst_name": "AI Agent Core"
+      "relation": "initiates",
+      "src_name": "User Interface (CLI)",
+      "dst_name": "Agent Core"
     },
     {
-      "relation": "utilizes",
-      "src_name": "AI Agent Core",
-      "dst_name": "LLM Integration Module"
+      "relation": "requests reasoning from",
+      "src_name": "Agent Core",
+      "dst_name": "LLM Interface"
     },
     {
-      "relation": "utilizes",
-      "src_name": "AI Agent Core",
-      "dst_name": "File System Tools"
+      "relation": "requests tool execution from",
+      "src_name": "Agent Core",
+      "dst_name": "Tool Registry"
+    },
+    {
+      "relation": "provides access to",
+      "src_name": "Tool Registry",
+      "dst_name": "File System Adapter"
+    },
+    {
+      "relation": "provides access to",
+      "src_name": "Tool Registry",
+      "dst_name": "Code Quality Module"
+    },
+    {
+      "relation": "provides operational settings to",
+      "src_name": "Configuration Service",
+      "dst_name": "Agent Core"
+    },
+    {
+      "relation": "configures",
+      "src_name": "Configuration Service",
+      "dst_name": "LLM Interface"
+    },
+    {
+      "relation": "configures",
+      "src_name": "Configuration Service",
+      "dst_name": "Tool Registry"
     }
   ]
 }
